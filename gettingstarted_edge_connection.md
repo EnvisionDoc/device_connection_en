@@ -1,173 +1,47 @@
-# Connecting Sub-devices to EnOS Cloud via Edge
+# Getting started with device connection through EnOS™ Edge
 
-This article helps you quickly learn how to provision the sub-device and edge to the EnOS Cloud, allowing the sub-device to connect and send telemetry to the EnOS Cloud through the edge, as well as how to check the communication status and view the data from EnOS Console.
+For traditional devices that do not support MQTT protocol, you can use EnOS™ Edge to connect your devices into EnOS™ Cloud.
 
+## Step 1: Apply for an edge
 
-## About This Scenario
+Apply for an edge from the Envision project manager<!--edge申请没有对外开放-->.
 
-For information about the connection scenario of this task, see "Scenario 2.1" in [Device Connection Scenarios](connection_scenarios).
+You'll receive a serial number that you'll later use for activating your edge.
 
+## Step 2: Create sites and devices
 
-## About This Task
+In EnOS™, the devices and the organization entity where the
+devices belong to are managed as *assets*. You'll first need to create your devices and sites in EnOS™.
 
-In this example, an inverter will be connected to the EnOS Cloud through an edge gateway. Edge will collect data from the inverter and send them to the EnOS Cloud as a proxy. The overall connection scenario is shown in the figure below:
+Use the **Asset Management > Sites and Devices** function to create sites and associate devices into your sites. For more information, see [Creating sites and devices](asset_management/creating_sites_devices).
 
-.. image:: media/edge_connection_task_description.png   
-     :width: 700px
+## Step 3: Organize sites
 
-As shown in the flowchart above, the procedure falls into the following steps:
+In practice, devices are typically organized hierarchically.
+The hierarchical structure is an *asset tree*. For more information about the asset management mechanism of EnOS™, see [Asset management overview](asset_management/index).
 
-1. Create device models
+Use the **Asset Management > Asset Tree** function to arrange your sites hierachically according to their organization in the real world. For more information, see [Creating asset tree](asset_management/creating_asset_tree).
 
-   - Gateway model
-   - Inverter Model
+## Step 4: Create templates that adapts device models to real devices
 
-2. Create products
+Device template, which is the adaptor between device models and real devices, mainly define the communication protocol and mapping relationship between the data acquisition points and device model points.
 
-   - Gateway product
-   - Inverter product
+Use the **Templates** function to create templates for your devices. For more information, see [Creating a template](asset_management/creating_templates).
 
-3. Register devices
+## Step 5: Activate the edge
 
-   - Gateway device
-   - Inverter device
+Use the **Edge Connection** function to activate your edge. Enter the edge serial number that getting from Envision project manager and then activate it.
 
-4. Configure the edge gateway
+## Step 6: Configure the edge connection and add devices into the edge connection
 
-5. Use the device SDK to simulate gateway sending data as a proxy of the sub-device
+The major procedure is as follows:
 
-6. Check device communication status
+1. Define the edge connection parameters, such as IP address, Port, connection mode, short connection, or long connection.
 
-7. Check device data
+2. Add devices into the relevant edge connection.
 
-## Prerequisites
+3. Bind templates for devices.
 
-Before you start, make sure that you have completed sub-device (the inverter, as briefed above) registration by following [Connect Device into Cloud Directly (Without Edge)](gettingstarted_device_connection). In this task, we only create the model, product, and device for the gateway device.
+4. Configure the logical address or offset.
 
-## Step 1: Create an Edge Device Model
-
-In this step, We will create an Edge device model called **Edge_Model**, and we assume that there are no reusable edge device models.
-
-1. In the EnOS Console, click **Model** from the left navigation panel.
-
-2. Click **New Model**, and provide the following settings in the **New Model** window:
-
-   - **Identifier**: Edge_Model
-   - **Model Name**: Edge_Model
-   - **Category**: NA
-   - **Create From**: No
-   - **Support Passthrough**: Default
-   - **Source model**: NA
-   - **Description**: Edge Model
-
-   .. image:: media/model_edge.png
-      :width: 550px   
-
-3. Click **OK** to complete the operation.
-
-4. Click **Edit**, and click the **Feature Definition** tab in the **Model Details** screen.
-
-5. Click **Add**, and provide the following settings in the **Add Feature** window:
-
-   - **Attribute**
-   - **Name**: Version
-   - **Identifier**: Version
-   - **Data Type**: string
-   - **String Length**: 20
-   - **Required**: Yes
-
-6. Click **OK** to complete the operation.
-
-For details on device model settings, see [Creating Model](model/creating_model).
-
-
-## Step 2: Create an Edge Product
-
-In this step, we create a product called **Edge_Product**. We assume that an edge device of this product model sends data in JSON format and the data transmission is not encrypted using CA certificate.
-
-1. In the EnOS Console, select **Device Management > Product**.
-
-2. Click **New Product**, and provide the following settings in the **New Product** window:
-
-   - **Product Name**: Edge_Product
-   - **Asset Type**: Gateway
-   - **Device Model**: Edge_Product
-   - **Data Format**: Json
-   - **Certificate-based Two-way Authentication**: Disable
-   - **Product Description**: Edge Product
-
-3. Click **OK** to complete the operation.
-
-For details about product settings, see [Creating Products](cloud/creating_product).
-
-
-## Step 3: Register the Edge Gateway
-
-In this step, we create an edge device named **Edge01**, which belongs to the **Edge_Product** product model created in the previous step.
-
-1. In the EnOS Console, select **Device Management > Device**.
-
-2. Click **New Device**, and provide the following settings in the **New Device** window:
-
-   - **Product**: Edge_Product
-   - **Device Name**: Edge01
-   - **Use DST**: No
-   - **timezone**: UTC+14:00
-   - **Device Key**: Optional, generated automatically by system
-   - **Version**: Optional, left blank by default
-
-3. Click **Confirm** to complete the operation.
-
-.. image:: media/register_edge.png   
-
-
-## Step 4: Configure Edge Connection
-
-### Using EnOS Edge
-
-Use this procedure if you choose to use the EnOS Edge. When you use the gateway products from other vendors, please refer to their respective gateway configuration instructions.
-
-1. Apply for an Edge gateway device from your Envision project manager or support representative. Your edge device triple needs to be burned into the edge firmware. Ensure that you get the edge device credentials ready. After the edge is prepared, you will obtain an SN for the edge gateway.
-
-2. Go to the **Edge Gateway > Edge Management** configuration page, and activate the edge gateway device that you applied by entering the obtained SN.
-
-3. In the edge gateway, configure the connections and add sub-devices into the connection.
-
-4. Publish the configuration to the edge gateway.
-
-For more information on how to configure the EnOS Edge gateway, see [Adding an EnOS Edge Gateway](edge/managing_edge).
-
-
-
-## Step 5: Use the Device SDK to Simulate Gateway Sending Data as Proxy of Sub-devices
-
-In this step, we use the device SDK to simulate sending the inverter active power to the cloud.
-
-1. Obtain the [Device SDK](https://github.com/EnvisionIot/enos-mqtt-java-sdk). For more information, see the GitHub readme file.
-
-2. Configure the EnOS Cloud connection as instructed in the readme file.
-
-3. Configure the device triple (`ProductKey`,`DeviceKey`,`DeviceSecret`) into the sample connection program. The device triple is obtained when you register the device.
-
-4. Modify the `postSubMeasurepoint` method, configure the name of the measure point that sends telemetry to the cloud. In this example, we send the active power point of the inverter, set the point name **INV.GenActivePW** and the corresponding point value.
-
-5. Invoke sample methods for the following operations:
-
-   - Gateway logs in
-   - Gateway adds the topology of sub-devices
-   - Sub-device logs through the edge gateway
-   - Gateway sends data of the sub-device as the proxy
-
-For more information, see [Using the Device SDK](device/using_java_sdk).
-
-
-## Step 6: Check the Device Status
-
-In the EnOS Console, click **Device Management > Device**, locate the Edge01 and INV001 devices and confirm that the devices are online.
-
-
-## Step 7: Check the Device Data
-
-1. In the **Device** page, locate the INV001 device and click **View** to show the **Device Details** page.
-
-2. Click the **Measure Points** tab, and select the **INV.GenActivePW** measure point, click **View Data** to view the historical data.
+For details, see [Configuring edge connection](asset_management/configuring_edge_connection).

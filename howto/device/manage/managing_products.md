@@ -6,16 +6,6 @@ On the **Product** page, you can perform operations such as enabling dynamic reg
 
 To manage products, you must have write access to the **Connectivity Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/latest/access_policy).
 
-## Enabling Dynamic Registration
-
-On the **Product Details** page, you can enable dynamic registration to support batch burning for devices of the same product model. With dynamic registration, you can batch burn the same productKey and productSecret to multiple devices, and these devices will be activated dynamically if they go online.
-
-1. In the EnOS Console, select **Device Management > Product**.
-
-2. In the table of created products, for the target product, click **View** to open the **Product Details** page.
-
-3. In the **Basic Information** table of the product, turn on the **Enable Dynamic Activation** switch.
-
 ## Viewing Logs
 
 On the **Product Details** page, you can view the logs of important behaviors of all the devices under the product.

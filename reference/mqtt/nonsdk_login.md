@@ -12,56 +12,112 @@ The supported MQTT version:
 
 You can connect devices to the EnOS Cloud using the MQTT protocol directly. Include the following values in the CONNECT packet of the device:
 
-```
-  mqttClientId: clientId+"|securemode=<securemode>,signmethod=sha1,timestamp=132323232|"
-  mqttUsername: deviceKey+"&"+productKey
-  mqttPassword: toUpperCase(sha1(content+deviceSecret/productSecret))
+```java
+  mqttClientId: {clientId}|securemode={secureMode}, signmethod=sha256,timestamp={timeStamp}|
+  mqttUsername: {deviceKey}&{productKey}
+  mqttPassword: toUpperCase(sha256(content{deviceSecret}/{productSecret}))
 ```
 - For the **mqttClientId** segment:
 
-  - _clientId_: Required. Identifier of the device, `deviceKey`. Can be specified using either the MAC address or device serial number. It must contain no more than 64 characters. The parameters within  ``||`` are the optional parameters. 
-  - _securemode_: Required. Indicates the secure mode that has been used. 
+  - `clientId`: Required. Identifier of the device. Can be specified using either the MAC address or device serial number. It must contain no more than 64 characters. 
+
+  The parameters within ``||`` are the optional parameters. 
+
+  - `securemode`: Required. Indicates the secure mode that has been used. 
     - For secret-per-device authentication (`productKey`, `deviceKey`, `deviceSecret` is provided to statically activate the device), the value is `2`.
     - For secret-per-product authentication (`productKey`, `productSecret`, `deviceKey` is provided to dynamically activate the device) the value is `3`.
-  - _signmethod_: Required. Indicates the signing method. Currently, only support `signmethod=sha1`.
-  - _timestamp_: Required. Indicates the current time in milliseconds.
+  - `signmethod`: Required. Indicates the signing method. Supports sha256, which means using SHA256 signature algorithm.
+  - `timestamp`: Required. Indicates the UNIX timestamp of the current time in milliseconds.
 
 - For the **mqttUsername** segment:
 
-  - The value of the _deviceKey_ and _productKey_ of a device that can be obtained from the EnOS Console after you complete registering the device.
+  - The value of the `deviceKey` and `productKey` of a device that can be found on the EnOS Console after you complete creating the device.
 
 - For the **mqttPassword** segment:
 
-  <!-- - You can use the [Password Generation Tool](../../_static/nonsdk_enosmqttsign_index.html) to generate the password quickly.-->
+  <!-- - You can use the [Password Generation Tool](../../`static/nonsdk`enosmqttsign`index.html) to generate the password quickly.-->
 
-  - _content_: The concatenation of _clientID_, _deviceKey_, _productKey_, _timestamp_, and their values. The parameter names must be sorted in alphabetical order and concatenated without concatenation symbols.  
+ Different methods are used to generate `mqttPassword` for devices that use secret-per-device and secret-per-product authentication.
 
-  - _deviceSecret_: When the device carries the device secret, append the value of _deviceSecret_ after _content_ without any space or symbol.
+### Secret-per-device Authentication
 
-    Below is an example of _mqttPassword_ when _clientId_=`123`, _deviceKey_=`test`, _productKey_=`123`, _timestamp_=`1524448722000`, _deviceSecret_=`deviceSecretxxx`.
+In secret-per-device authentication, `productKey`, `deviceKey`, and `deviceSecret` are configured in the device before the device tries to get authenticated and log in to EnOS. You can obtain a device's `productKey`, `deviceKey`, and `deviceSecret` from EnOS console after you have created the device in **Device Management > Device**.
 
-    ```
-    mqttPassword = toUpperCase(sha1(clientId123deviceKeytestproductKey123timestamp1524448722000deviceSecretxxx))
-    ```
-
-  - _productSecret_: When the device carries the product secret, append the value of the _productSecret_ after _content_ without any space or symbol.
-
-    Below is an example of _mqttPassword_ when _clientId_=`123`, _deviceKey_=`test`, _productKey_=`123`, _timestamp_=`1524448722000`, productSecret=`productSecretxxx`.
-
-    ```
-    mqttPassword = toUpperCase(sha1(clientId123deviceKeytestproductKey123timestamp1524448722000productSecretxxx))
-    ```
-
-Only unactivated device can be authenticated via product secret, the `productKey`, `productSecret`, and `deviceKey` is written into the device to dynamically obtain the `deviceSecret` upon first attempt to connect to EnOS Cloud. The device is then activated through its device triple and starts to transmit data to the cloud. This is called _dynamic activate_ of a device.
-
-When you perform the device-end development, you need to persist the device triple in the device. After being activated, a device is signed through its `deviceSecret`. To re-activate a device, you must delete the device from the EnOS Console and re-register the device.
-
-In the dynamic activation mode, the `deviceScret` is returned to the device after the device logs in through the following topic:
+For secret-per-device authentication:
+```java
+mqttPassword: toUpperCase(sha256({content}{deviceSecret}))
 ```
-/ext/session/{productKey}/{deviceKey}/thing/activated/info
+
+Generate an MQTT password by combining `content` and `deviceSecret`, whose definitions are explained as follows:
+
+  - `content`: The concatenation of `clientID`, `deviceKey`, `productKey`, `timestamp`, and their values. The parameter names must be sorted in alphabetical order and concatenated without any space or character.
+  - `deviceSecret`: Append the value of `deviceSecret` after `content` without any space or character. 
+
+.. note:: The value of `timestamp` must be same as the `timestamp` in the **mqttClientId** segment.
+
+Below is an example of **mqttPassword**, given:
+- `clientId`=`123456`, 
+- `deviceKey`=`test`, 
+- `productKey`=`654321`, 
+- `timestamp`=`1548753362502`, 
+- `deviceSecret`=`abcdefg`.
+
+The `clientId` in this case should be:
+
+```java
+123456|securemode=2,signmethod=sha256,timestamp=1548753362502|
 ```
-And the returned message takes the following format:
+
+The `mqttUsername` in this case should be:
+
+```java
+test&654321
 ```
+
+The `mqttPassword` in this case should be:
+
+```java
+mqttPassword = toUpperCase(sha256(clientId123456deviceKeytestproductKey654321timestamp1548753362502abcdefg))
+```
+
+### Secret-per-product Authentication
+
+To enable secret-per-product authentication, you must first toggle **Enable Dynamic Activation** switch on in **Device Management > Product > Product Details**.
+
+For secret-per-product authentication,:
+
+```java
+mqttPassword: toUpperCase(sha256({content}{productSecret}))
+```
+Generate an MQTT password by combining `content` and `productSecret`, whose definitions are explained as follows:
+
+  - `content`: The concatenation of `clientID`, `deviceKey`, `productKey`, `timestamp`, and their values. The parameter names must be sorted in alphabetical order and concatenated without any space or character.
+
+  - `productSecret`: Append the value of `productSecret` after `content` without any space or character. 
+
+.. note:: The value of `timestamp` must be same as the `timestamp` in the **mqttClientId** segment.
+
+Below is an example of `mqttPassword`, given:
+- `clientId`=`123`, 
+- `deviceKey`=`test`, 
+- `productKey`=`123`, 
+- `timestamp`=`1524448722000`, 
+- `productSecret`=`abcdefg`.
+
+The `mqttPassword` in this case should be:
+```java
+mqttPassword = toUpperCase(sha256(clientId123deviceKeytestproductKey123timestamp1524448722000abcdefg))
+```
+
+In secret-per-product authentication, `productKey`, `productSecret`, and `deviceKey` are configured in the device in advance. When the device tries to get authenticated and log in to EnOS, it first sends a request containing `productKey`, `productSecret`, and `deviceKey`in exchange for `deviceSecret`. If the device passes authentication, it then subscribes to the following topic to obtain the `deviceSecret`:
+
+```
+/ext/session/{productKey}/{deviceKey}/thing/activate/info
+```
+
+The `deviceSecret` is sent back as JSON file in the following format:
+
+```json
 {
     "id": "1",
     "version": "1.0",
@@ -75,17 +131,6 @@ And the returned message takes the following format:
 }
 ```
 
-You'll need to handle the message returned upon dynamic activation, the following shows a sample for Java.
-
-```
- client.setArrivedMsgHandler(DeviceActivateInfoCommand.class, (DeviceActivateInfoCommand msg,  List<String> args) -> {
-            //try persist the reply device info and then rebuild the mqttClient
-            System.out.println(msg.getDeviceInfo());
-            return null;
-        });
-```
-
-.. note:: The value of `timestamp` must be same as the `timestamp` in the **mqttClientId** segment.
-
+The device can then use the `deviceSecret` together with `productKey` and `deviceKey` for later authentication and logins.
 
 <!--end-->

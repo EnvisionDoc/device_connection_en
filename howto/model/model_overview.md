@@ -45,15 +45,15 @@ For models created from the **Inherit** mode, we define the newly created models
 
 ## Model Permission
 
-The read and write permissions for the model can be divided into two categories: **Public Model** and **Private Model**.
+EnOS provides **Public Model** and **Private Model**, each having their own access policy.
 
 ### Public Model
 
-The public models are the domain standard models that are accumulated on EnOS and are made public to all organization units by EnOS. All OUs have read permission but no write permission to the public models.
+The public models are the standard models applicable to different industries that are accessible to all organization units (OUs) on EnOS. All OUs on EnOS have read access and no OU has write access to public models.
 
 ### Private Model
 
-The private models are created by the developers in their own OU. Private models are not open to the public and are visible only within the organization. The developers in the organization have read and write permissions to the private models.
+A private model is created by an OU. Private models are accessible only within the the creating OU. All users of this OU have read access, and only authorized users of this OU have write access to private models.
 
 ## Related Information
 

@@ -35,3 +35,32 @@ The `productKey`, `deviceKey`, and `deviceSecret` are considered as the device t
 2. In the table of devices, for the target device, click **View** to open the **Device Details** page.
 
 3. Find the `productKey`, `deviceKey`, and `deviceSecret` of the device.
+
+## Updating Devices in Batch
+
+You can update devices in batch by downloading the template, editing and then uploading it.
+
+1. Go to **Device Management > Device** .
+
+2. Click **Batch Import** . In the **Batch Import and Update** pop-up, select **Batch Update** for **Operations** .
+
+3. In **Product** , select the product that the devices to be edited belong to.
+
+4. In **Template** , you can select one of the following methods to download a template:
+
+   - Download an empty template: select this option then click **Empty template(.xlsx)** to download an empty template.
+   - Generate template from existing device: select this option and then choose a device from the drop-down list. Then click **Template (.xlsx)** to download a template based on this device.
+
+   The downloaded template is named *Template_productKey.xlsx*, **productkey** referring to the product key of the device.
+
+5. Edit and save your template.
+
+6. Click |upload_file|, find the edited template and click **Open** . Then click **OK** to upload the template.
+
+   EnOS starts parsing the template. When it completes parsing, the result will be displayed in a pop-up. If there is at least one valid record, you can click **Update** to finish importing. For those invalid records, if there are any, you can click **Export Invalid Records** to download the _errmsg.txt_ file and view the location of the invalid records in the file and the cause.
+
+## Adding Sub-devices to a Gateway Device
+
+In **Device Management > Device** , you can add sub-devices to those devices whose **Asset Type** is **Edge** . Click |view| in the **Operations** column.  In **Device Details** page, go to **Sub-device** tab. Click **New Sub-device**, select devices to be added to this gateway device and click **OK** . You can only select those that have not been added to other gateway devices.
+
+.. |view| image:: ../../../media/button_view.png

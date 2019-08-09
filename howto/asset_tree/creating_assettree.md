@@ -52,7 +52,8 @@ After creating the asset tree, you can bind an asset to the tree as a node by th
 2. In the "New Sub-node" pop-up window, select the way you want to add a sub-note. In this scenario, **Bind to existing asset** . Click **Next** .
 
 3. In the asset list, select the asset to be bound to the tree and click **Confirm**. You may also use the filters to help you out.
-   You cannot select the assets already bound to the asset tree.
+
+   Only those assets that have not been bound to this asset tree are displayed. You can select at most 100 devices at one time.
 
    .. image:: ../../media/creating_asset_by_importing.png
 

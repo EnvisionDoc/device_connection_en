@@ -8,7 +8,7 @@ To perform the management operations, you must have write access to the **Asset 
 
 ### Deleting an Asset
 
-Click the |delete| button next to an asset to delete it. Before deleting an asset, make sure it does not contain any asset bound to it.
+Click the |delete| button next to an asset to delete it. If this asset has sub-nodes, you must select **Remove all the sub-nodes under this asset** to delete it.
 
 .. |delete| image:: ../../media/button_delete_asset.png
 

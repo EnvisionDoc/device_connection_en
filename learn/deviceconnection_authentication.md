@@ -2,6 +2,21 @@
 
 To ensure the security of the devices and data transmission, the device needs to be authenticated before exchanging data with the EnOS IoT Hub. EnOS supports _Secret-based One-way Authentication_ and _Certificate-based Two-way Authentication_.
 
+The overall authentication process for device connection is as follows:
+
+1. Create a device in **Device Management > Device** .
+
+2. Configure the device information in an EnOS Edge.
+
+3. Connect Edge to EnOS cloud. The device authentication keys will be sent to EnOS cloud for authentication.
+
+   - If authentication succeeds, the device gets online and can communicate with EnOS cloud.
+   - If authentication fails, the connection is closed.
+
+The specific flow chart is as follows:
+
+.. image:: ../media/secret_communication.png
+
 ## Secret-based Authentication
 
 Secret-based authentication refers to the authentication of devices based on authentication keys, i.e. `ProductKey`, `DeviceKey` and `DeviceSecret`.
@@ -18,98 +33,46 @@ Before discussing the secret-based authentication mechanism, you need to underst
   - `DeviceKey`: A globally unique device identifier that is user-defined or auto-generated when a user registers a device on EnOS. 
   - `DeviceSecret`: The device secret issued by EnOS, which is paired with `DeviceKey`.
 
-### Device Connection Operations 
+### Device Authentication Operations 
 
 Perform the following operations in the following order to connect a device to EnOS:
 
 1. **Registration**
 
-  Create a device instance in EnOS by either using the console or calling an API.
+  Create a device instance in EnOS by either using the console or calling an API. The device is now **Inactive**.
 
-2. **Login**
+2. **Authentication**
 
-  Let the device send a request with `ProductKey`, `ProductSecret`, and `DeviceKey` for authenticaion. If the device passes authentication, EnOS gives the device a `DeviceSecret`. The device then attempts to log in to EnOS with `ProductKey`, `ProductSecret`, and `DeviceSecret`. 
+  You can either dynamically or statically authencitate a device. Once the device is authenticated, its state changes from **Inactive** to **Online**. If an **Online** device has not send any data to EnOS within specified time range, it becomes **Offline**.
 
-3. **Activation**
+### Device Authentication Mode and Device States
 
-  The device is activated upon its first successful login, its state changing from **Inactive** to **Online**. If an **Online** device has not send any data to EnOS within specified time range, it becomes **Offline**.
+You can dynamically or statically activate the device.
 
-### Device Activation Mode and Device States
+- **Dynamic Authentication**: To use dynamic authentication, go to **Device Management > Product** . Find the product that the device is created from and click **View** in the **Operations** column. In **Basic Information** tab page, enable the **Enable Dynamic Activation** switch. A device can be authenticated as follows:
 
-Create a device instance in **Device Management > Device** . For more information, see [Creating a Device](../howto/device/manage/creating_device). Devices created are not activated by default. You can dynamically or statically activate the device.
+  1. After being created on EnOS, the device sends a request carrying the `ProductKey`, `ProductSecret`, and `DeviceKey` for `DeviceSecret`. If the authentication is successful, a `DeviceSecret` will be returned to the device.
 
-- **Dynamic Activation**: To use dynamic activation, go to **Device Management > Product** . Find the product that the device is created from and click **View** in the **Operations** column. In **Basic Information** tab page, enable the **Enable Dynamic Activation** switch. The process of dynamic activation is as follows:
+  2. The device tries to get authenticated with the `ProductKey`, `DeviceKey`, and `DeviceSecret`.
 
-  1. When trying to connect for the first time, the device will carry the `ProductKey`, `ProductSecret`, and `DeviceKey` for authentication. If the authentication is successful, a `DeviceSecret` will be returned to the device.
+  Once the device has been authenticated, its status will change from **Inactive** to **Online**. The device will then be able to send data to EnOS. If no data is sent within a certain period of time, the status of the device will change to **Offline**.
 
-  2. The device tries to log in with the `ProductKey`, `DeviceKey`, and `DeviceSecret`.
+- **Static Authentication**: This is the default way of authentication. Devices using this authentication method carry the `DeviceSecret` given when created on EnOS, together with `ProductKey` and `ProductSecret`. The process of static activation is as follows:
 
-  3. Once the device successfully logs in, its status will change from **Inactive** to **Online**. The device will then be able to send telemetry. If no telemetry is sent within a certain period of time, the status of the device will change to **Offline**.
+  1. The device sends an authentication request carrying the `ProductKey`, `DeviceKey`, and `DeviceSecret`.
 
-- **Static Activation**: This is the default way of authentication. Devices using this authentication method carry the `DeviceSecret` given when created on EnOS, together with `ProductKey` and `ProductSecret`. The process of static activation is as follows:
+  2. Once the device is successfully authenticated, its status will change from **Inactive** to **Online**. The device will now be able to communicate with EnOS. If no data is sent within a certain period of time, the status of the device will be changed to **Offline**.
 
-  1. The device sends a login request carrying the `ProductKey`, `DeviceKey`, and `DeviceSecret`.
-
-  2. Once the device is successfully logged in, its status will change from **Inactive** to **Online**. The device will now be able to send data. If no data is sent within a certain period of time, the status of the device will be changed to **Offline**.
-
-When the device is not working properly or you do not want to receive its data, set it to **Disabled**, after which the device will go **Offline**.
-
-<!--
-
-Three dimensions are used to describe the overall state of the device: Operational State, Activation State, and Communication State, as shown in the following table:
-
-.. list-table::
-   :widths: auto
-
-   * - Operational State
-     - Activation State
-     - Communication State
-   * - Disable
-     - \
-     - Offline
-   * - Enable
-     - Inactive
-     - \
-   * - \
-     - Activated
-     - Online
-   * - \
-     - \
-     - Offline
-
--->
-
-### Authentication Process
-
-The overall authentication process for device connection is as follows:
-
-1. Create a device in **Device Management > Device** .
-
-2. Configure the device information in an EnOS Edge.
-
-3. Connect Edge to EnOS cloud. The device authentication keys will be sent to EnOS cloud for authentication.
-
-   - If authentication succeeds, the device can communicate with EnOS cloud.
-   - If authentication fails, the connection is closed.
-
-4. The device sends data to EnOS cloud.
-
-5. The EnOS cloud issues instructions to the device.
-
-6. The device executes the instructions and responds to the request from EnOS cloud.
-
-The specific flow chart is as follows:
-
-.. image:: ../media/secret_communication.png
+When the device is not working properly or you do not want to receive its data, set it to **Disabled**. The device will then go **Offline**.
 
 ## Certificate-based Authentication
 
-The secret-based authentication involves device identity authentication with authentication keys. It is a one-way authentication mechanism, that is, the IoT Hub validates the identity of the device, however, the device does not verify the identity of the IoT Hub. To enforce two-way authentication, the certificate-based authentication mechanism can be used.
+The secret-based authentication refers to device identity authentication with authentication keys. It is a one-way authentication mechanism, that is, the IoT Hub validates the identity of the device, however, the device does not verify the identity of the IoT Hub. To enforce two-way authentication, the certificate-based authentication mechanism can be used.
 
 When certificate-based authentication is enabled，EnOS enforces the following security schemes to secure the connection between the EnOS Edge and EnOS IoT Hub:
 
-- The communications between the EnOS Edge and EnOS IoT Hub are enforced to use certificate-based bi-directional authentication.
-- Support for RSA algorithm to verify signature, with enforcement for 2048 bits.
+- The communication between the EnOS Edge and EnOS IoT Hub is based on certificate-based bi-directional authentication.
+- Suppors RSA algorithm to verify signature and uses a 2048-bit RSA key
 
 Before discussing the certificate-based two-way authentication mechanism, you need to understand the following concepts:
 

@@ -26,6 +26,26 @@ You can define the following elements to define a thing model according to the a
      - The event that can occur when the device is running. An event generally contains notification information that needs to be externally perceived and processed, and may include multiple output parameters.
      - State changes, information about the completion of a job, or the temperature of a device when a failure or alert occurs, etc. 
 
+<!--The end -->
+
+## Data Type
+
+The attributes, measurement points, services, and events are described by data, which is categorized into different types. The following types of data can be used to describe a model.
+
+- int32, 32-bit signed integers
+- float
+- double
+- enum
+- boolean
+- string, 1 to 1024 bytes in length
+- timestamp, in UTC with millisecond timing accuracy
+- date
+- struct, whose members can be int32, float, double, enum, bool, string, date
+- array, whose members can be int32, float, double, string. You must declare the types of the members when using array. The length of an array can be indefinite, with a maximum of 128 members allowed.
+- file
+
+You can use the built-in units for the data when the type is not enum or struct, such as kilometer, decimeter, and percentage.
+
 ## Model Relationship
 
 A model can be created from a source model through: **Clone** and **Inherit**. The difference of the two creating modes are mainly reflected in the model relationship.

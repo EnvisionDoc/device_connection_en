@@ -54,7 +54,7 @@ In the servicing phase, you can
 - Gain an overview of your device and message dynamics through the device management dashboard that EnOS provides natively in the Console. You can also develop your own application for data presentation.
 - Control your devices remotely from the cloud, such as to enable or disable the devices, or trigger services as defined by the device model.
 - Use the Asset Alert Service to monitor alerts on your devices as defined by the alert triggering rules against real-time measure point telemetry. For more information, see [Device Alert](../howto/alert/alert_overview).
-- Manage, consume, and store the device data according to your business needs. For more information, see [Data Asset Management](https://docs.eniot.io/docs/data-asset/en/latest/data_asset_overview.html).
+- Manage, consume, and store the device data according to your business needs. For more information, see [Data Asset Management](https://www.envisioniot.com/docs/data-asset/en/latest/data_asset_overview.html).
 
 ## Maintanance Phase
 

@@ -26,7 +26,7 @@ Make sure no child assets exist under the asset tree before deleting the asset t
 
 ## Moving a Node
 
-You can move any node on an asset tree except the tree itself. Click and drag the |move| button to move it. If your destination is deeper than Layer 7 of a tree, the move operation fails. By moving a node, all assets bound to it as sub-nodes will also be moved to the new location.
+You can move any node on an asset tree except the tree itself. Click and drag the |move| button to move it. If your destination is deeper than Layer 7 of a tree (the root node being layer 1), the move operation fails. By moving a node, all assets bound to it as sub-nodes will also be moved to the new location.
 
 .. |move| image:: ../../media/button_move_asset.png
 

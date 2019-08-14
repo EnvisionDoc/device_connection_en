@@ -57,10 +57,20 @@ You can update devices in batch by downloading the template, editing and then up
 
 6. Click |upload_file|, find the edited template and click **Open** . Then click **OK** to upload the template.
 
+ .. |upload_file| image:: ../../../media/button_upload_file.png
+
    EnOS starts parsing the template. When it completes parsing, the result will be displayed in a pop-up. If there is at least one valid record, you can click **Update** to finish importing. For those invalid records, if there are any, you can click **Export Invalid Records** to download the _errmsg.txt_ file and view the location of the invalid records in the file and the cause.
 
 ## Adding Sub-devices to a Gateway Device
 
-In **Device Management > Device** , you can add sub-devices to those devices whose **Asset Type** is **Edge** . Click |view| in the **Operations** column.  In **Device Details** page, go to **Sub-device** tab. Click **New Sub-device**, select devices to be added to this gateway device and click **OK** . You can only select those that have not been added to other gateway devices.
+Perform the following steps to add sub-devices to gateway devices other than EnOS Edge. To add sub-devices to EnOS Edge, see [Managing Edge](/docs/enos-edge/en/latest/howto/console_configuration/managing_edge).
+
+1. Go to **Device Management > Device** .
+
+2. For those devices whose **Asset Type** is **Edge** . Click |view| in the **Operations** column.  
+
+3. In **Device Details** page, go to **Sub-device** tab. 
+
+4. Click **New Sub-device**, select devices to be added to this gateway device and click **OK** . You can only select those that have not been added to other gateway devices.
 
 .. |view| image:: ../../../media/button_view.png

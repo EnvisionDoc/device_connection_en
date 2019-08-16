@@ -8,6 +8,8 @@ To create an asset tree, you must have write access to the **Asset Tree** servic
 
 ## Creating an Asset Tree
 
+.. note:: You can create a maximum of 10 asset trees within an OU.
+
 1. In the EnOS Console, click **Asset Tree** from the left side navigation panel.
 
 2. Click  **+**  on the upper left corner to create an asset tree.

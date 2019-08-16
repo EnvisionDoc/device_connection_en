@@ -84,20 +84,7 @@ See [Creating a Model](../model/creating_model) to create models for each type o
 
 ### Step 2: Creating an Asset Tree
 
-1. Create the asset tree.
-
-   - In the EnOS Console, click **Asset Tree** from the left navigation panel.
-   - In the **Asset Tree** page, click **+** in the upper left corner to create the asset tree.
-
-     - Generally, the asset tree is generally not a connected device.
-     - If the asset tree does not need a model, you can use the built-in model `None`, which has four empty elements, for root node.
-
-2. After creating the asset tree, you can bind devices to the asset tree as a node by the following methods:
-
-   - Create an device based on the model
-   - Bind an existing device to the asset tree as a node
-
-For information about the detailed settings, see [Creating an Asset Tree](creating_assettree).
+See [Creating an Asset Tree](creating_assettree) to create asset tree and nodes for the assets involved in the scenario.
 
 ## Related Information
 

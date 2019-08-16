@@ -1,6 +1,6 @@
 # Creating Devices in Batch
 
-You can create devices of the same product in batch by using this feature. 
+You can create devices of the same product in batch by using this feature.
 
 ## About This Task
 
@@ -16,16 +16,16 @@ When there are lots of devices that need to be created, you can use the followin
 ## Procedure
 
 1. Select **Device Management > Device**.
-   
+
 2. Select **Batch Import** and select the product the devices belong to.
 
 3. Select one of the following methods to download the template:
 
   - Click **Download an empty template**, then click **Empty tempate(.xlsx)** to download the blank template;
   - If the devices to be imported have similar attributes to an existing device, select **Generate template from existing device**, select a device in the drop-down list based on its device key, and then click **Template (.xlsx)** to download the template.
-   
-  .. note:: The downloaded template is named as "Template_*product_key*.xlsx", where *product_key* refers to the product key of the product the device belongs to, and you can find it in **Device Management > Product**.
-  
+
+  .. note:: The downloaded template is named as \"Template*\_product\_key*\.xlsx\", where *product_key* refers to the product key of the product the device belongs to, and you can find it in **Device Management > Product**.
+
   .. image:: ../../../media/device_batch_import.png
 
 4. Fill in the template with the device attributes in the required format. The template contains the following fixed fields:

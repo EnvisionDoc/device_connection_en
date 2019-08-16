@@ -49,9 +49,9 @@ Configure all the features in EnOS according to the defined thing model.
 
 1. On the **Add Feature** page, select **Attributes** from the **Feature Type** dropdown list and complete the following settings:
 
-   - **Name**: The name of the attribute; duplicate name is not allowed under the same module.
-   - **Identifier**: A unique identification code for the attribute; duplicate identifier is not allowed under the same organization. This identifier value in JSON format is used as a key by the device to send attribute data. The cloud will verify the identifier before deciding whether to receive the data.
-   - **Data Type**: The data type of this attribute.
+   - **Name**: Required. The name of the attribute; duplicate name is not allowed under the same module.
+   - **Identifier**: Required. A unique identification code for the attribute; duplicate identifier is not allowed under the same organization. This identifier value in JSON format is used as a key by the device to send attribute data. The cloud will verify the identifier before deciding whether to receive the data.
+   - **Data Type**: Required. The data type of this attribute.
 
      + int, float, double: Information such as the default value and the data unit shall be defined.
      + enum: The parameter value of enum items and parameter description shall be defined.
@@ -68,7 +68,7 @@ Configure all the features in EnOS according to the defined thing model.
            - If all values are saved as string when created, subsequent new or changed values will also be saved as string. Even if you change the values later so that all of them are integers, they are still saved as string instead of int. No error message will be displayed in this scenarion.
 
      + bool: Boolean value shall be defined as 0 or 1.
-     + string: A default value, the string type and string length shall be defined.
+     + string: The length is required.
      + timestamp: The timestamp is in the form of a UTC timestamp string (in milliseconds).
      + date: The format of date is yyyy-MM-dd HH:mm:ss.
      + struct: A JSON structure defined by **Parameter Name**, **Identifier**, **Data Type** and **Unit**.

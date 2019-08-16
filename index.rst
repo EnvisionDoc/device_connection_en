@@ -35,6 +35,7 @@ Device connection
    :caption: Tutorial
 
    tutorial/connecting_device_simulated/index
+   tutorial/connecting_pc/index
    tutorial/connecting_device_rasberrypi/index
    tutorial/upgrading_firmware_ota/index
 

@@ -12,4 +12,5 @@ Managing Models
    :caption: How-to's
 
    creating_model
+   managing_model
 

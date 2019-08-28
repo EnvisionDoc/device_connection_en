@@ -4,7 +4,7 @@ After the device modeling, device registration, and data storage policy configur
 
 For detailed information about the EnOS Java SDK for MQTT, refer to the readme file on [GitHub](https://github.com/EnvisionIot/enos-mqtt-sdk-java).
 
-## Step 1: Setting Up Development Environment
+## Step 1: Setting up Development Environment
 
 EnOS Java SDK for MQTT requires Java SE 8 and Maven 3. Take the following steps to set up your development environment:
 

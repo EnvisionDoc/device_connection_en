@@ -230,21 +230,18 @@ latex_elements = {
         \begin{titlepage}
             \AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{bg.png}}
 
-            \vspace*{15mm} %%% * is used to give space from top
-            \fontsize{40pt}{\baselineskip}\selectfont \textbf{EnOS}
+            \vspace*{170mm} %%% * is used to give space from top
+            \fontsize{30pt}{\baselineskip}\selectfont \textbf{EnOS}
 
             \vspace{5mm}
 
-            \fontsize{40pt}{\baselineskip}\selectfont \textbf{Device Management}
+            \fontsize{30pt}{\baselineskip}\selectfont \textbf{Device Management}
 
             \vspace{5mm}
 
             \huge \textmd{Version}\textbf{ latest}
             %% \vfill adds at the bottom
             \vfill
-            \centerline{\fontsize{16pt}{\baselineskip}\selectfont \textbf{Envision Digital}}
-            \vspace{3mm}
-            \centerline{\fontsize{16pt}{\baselineskip}\selectfont \textmd{\today}}
         \end{titlepage}
 
         \clearpage

@@ -15,16 +15,12 @@ Here we take the household PV inverter connection as an example. The inverter de
 As shown in the flowchart above, the procedure falls into the following steps:
 
 1. Create a device model for the inverter
-
 2. Create a product for the inverter
-
 3. Register the inverter
-
-4. Simulate the inverter to send data via device SDK
-
-5. Check device communication status
-
-6. View device data
+4. Configure storage policy for measuring point data
+5. Simulate the inverter to send data via device SDK
+6. Check device communication status
+7. View device data
 
 ## Step 1: Create a Device Model
 
@@ -189,7 +185,14 @@ For details about device settings, see [Creating a Device](../howto/device/manag
 
 After you complete the device registration, obtain the device triple: `ProductKey`,`DeviceKey`,and `DeviceSecret`, which will be used in the following step.
 
-## Step 4: Use Java SDK to Simulate Device Sending Telemetry
+## Step 4: Configuring Storage Policy for Measuring Point Data
+
+After registering the device and before connecting the device to EnOS Cloud, we need to configure storage policy for the data of measuring point INV.GenActivePW. Detailed steps are as follows:
+
+1. If TSDB resource is not requested yet for the organization, log in the EnOS Console, select **Resource Management**, and request TSDB resource under the **Data Asset Management** tab. For more information about requesting resources, see [Resource Management Overview](/docs/enos/en/latest/resourcemanagement/overview.html). 
+2. In the EnOS Console, select **Time Series Data > Storage Policy** and configure storage policy (with appropriate storage type and storage time) for the measuring point data. For more information about configuring storage policy, see [Configuring TSDB Storage](/docs/data-asset/en/latest/configuring_tsdb_storage.html).
+
+## Step 5: Use Java SDK to Simulate Device Sending Telemetry
 
 In this step, we use the sample code of Java SDK to simulate sending the inverter active power to the cloud.
 
@@ -291,19 +294,19 @@ In this step, we use the sample code of Java SDK to simulate sending the inverte
 
 For more information, see [Using the Device SDK](../howto/device/develop/using_java_sdk).
 
-## Step 5: Check the Device Connection Status
+## Step 6: Check the Device Connection Status
 
 In the EnOS Console, click **Device Management > Device**, locate the device and check the status of the INV001 device and confirm that the device is **Online**.
 
 .. image:: ../media/device_status.png
 
-## Step 6: Check the Device Data
+## Step 7: Check the Device Data
 
 1. From the device list, locate the device and click the **View** icon to show the **Device Details** page.
 2. Click the **Measuring Points** tab, find the **INV.GenActivePW** measuring point, and click **View data** to open the **Data Insights** page.
 3. View the latest data of the measuring point on the Data Insights page. If TSDB storage policy has been configured for the measuring point, you can also view the historic data of the measuring point in a chart or table. For more information about data insights, see [Generating Time Series Data Chart](/docs/data-asset/en/latest/howto/storage/generating_data_chart.html).   
 
-## Step 7: Use Online Debugging Tool to Set Measuring Point Value
+## Step 8: Use Online Debugging Tool to Set Measuring Point Value
 
 1. Click **Device Management > Product**, Click **View** icon for the product that the device belongs to.
 

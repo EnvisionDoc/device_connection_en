@@ -41,14 +41,8 @@ Follow [Connecting a Smart Device into EnOS Cloud](gettingstarted_device_connect
 
 .. image:: ../media/INV002.png
 
-### Step 1: Obtain Root Certificate
 
-Download the CA root certificate `cacert.pem` from `https://<cluster_name>.envisioniot.com/enos/CA/cacert`
-
-- If you are in the EnOS public cloud, see []() for the `cluster_name`.
-- If you are in a private cloud instance, obtain the `cluster_name` from your Envision project manager or support representative.
-
-### Step 2: Create CSR File and Private Key
+### Step 1: Create CSR File and Private Key
 
 Use openssl to create an CSR file named `edge.csr` and a private key named `edge.key` with the following command:
 
@@ -61,13 +55,17 @@ openssl req -new -newkey rsa:2048 -out edge.csr -keyout edge.key -subj /C=CN/ST=
 
 For the guidelines of creating CSR file, see [Creating your Certificate Signing Request (CSR) file](https://www.envisioniot.com/docs/enos/en/latest/security/x509_ca/creating_csr.html)。
 
-### Step 3: Invoke REST API to Request for Certificate
+### Step 2: Invoke REST API to Request for Certificate
 
 After the CSR file `edge.csr` is created, invoke the relevant EnOS API to request for certificate. You have obtained the device triple when you create the **Edge01_Certificate** device, you can now call the `applyCertificateByDeviceKey` API to obtain your certificate.
 
 .. image:: ../media/postman_getcertificate.png
 
-After you obtain the certificate, save it as `edge.pem`.
+After you obtain the certificate, save it as `edge.pem`. It takes about 30 seconds for the certificate to take effect.
+
+### Step 3: Obtain Root Certificate
+
+Download the CA root certificate and save it as `cacert.pem` from the address given as value to `certChainURL` in Step 2.
 
 ### Step 4: Use Keytool to Generate JKS File
 

@@ -126,6 +126,8 @@ Configure all the features in EnOS according to the defined thing model.
 
 3. To create more measuring points, repeat the above steps.
 
+   .. note:: When measuring points are created, you must configure storage policy for the measuring point data in time. Otherwise, the measuring point data will not be stored in TSDB by default after the device is connected to EnOS Cloud. For more information about configuring storage policy, see [Configuring TSDB Storage](/docs/data-asset/en/latest/configuring_tsdb_storage.html). 
+
 ### Adding Service
 
 1. On the **Add Feature** pop-up window, select **Service** from the **Feature Type** drop-down list and complete the following settings:

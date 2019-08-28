@@ -15,7 +15,7 @@ In this unit, configure storage policy for the following measuring points that h
 
 For detailed description of the supported storage types, see [Configuring TSDB Storage](https://www.envisioniot.com/docs/data-asset/en/latest/configuring_tsdb_storage.html).
 
-## Creating a storage policy group
+## Step 1. Creating a storage policy group
 
 If there is no storage policy created for your organization, take the following steps to create one:
 
@@ -24,7 +24,7 @@ If there is no storage policy created for your organization, take the following 
 3. Click **OK** to save the storage policy group configuration.
 
 
-## Configuring storage policy
+## Step 2. Configuring data storage policy
 
 After the storage group is created, you can see all the TSDB storage policy options listed under the storage group tab. Configure **AI Raw Data** storage policy for the *cpu_used*, *mem_used*, *cpu_percent*, and *mem_percent* measuring points by taking the following steps:
 

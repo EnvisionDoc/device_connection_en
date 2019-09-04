@@ -23,3 +23,4 @@ Managing Device Alerts
    create_alert_content
    create_alert_rule
    managing_alerts_in_batch
+   set_alert_rule_for_device

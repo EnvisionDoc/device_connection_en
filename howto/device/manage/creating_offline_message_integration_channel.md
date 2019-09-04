@@ -1,4 +1,4 @@
-# Creating Offline Message Integration Channel
+# Integrating Offline Messages from Devices
 
 By creating an offline message integration channel, users can import the historical data from a 3rd-party system to EnOS for processing, storing and computing based on your policies.
 

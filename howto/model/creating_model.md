@@ -83,7 +83,7 @@ Configure all the features in EnOS according to the defined thing model.
 
 3. To create more attributes, repeat the above steps.
 
-### Adding Measuring Points
+### Adding Measurment Points
 
 1. On the **Add Feature** pop-up window, select **Measuring Points** from the **Feature Type** drop-down list and complete the following settings:
 

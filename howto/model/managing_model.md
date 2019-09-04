@@ -26,7 +26,9 @@ To edit your existing model, export the model first, then edit the downloaded fi
 
   The downloaded Excel file is named **ThingModel_Modelname.xlsx** where `Modelname` is the **Model Name** field from EnOS.
 
-  Edit the file to modify existing model elements or add new elements.
+4. You can edit the file to modify existing model elements or add new elements.
+
+ In application development, if you need to fast locate model elements, you can use the **Priority** attribute in the JSON file or the **Ranking** attribute in the Excel sheet. Priority or Ranking 0 indicates this element is created when you create the model. Elements you add to the existing model starts from 1 and increments by 1 for every later added element. You can also give the elements random non-negative integers as their **Priority** or **Ranking** as you see fit. The **Priority** or **Ranking** numbers can be discontinuous, non-sequenced, and duplicate. 
 
 ### Importing
 

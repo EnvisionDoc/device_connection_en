@@ -31,7 +31,7 @@ The process for connecting NB-IoT devices to EnOS via CoAP is shown as follows:
 ## Before You Start
 
 - Register devices one by one and obtain their `productKey`, `deviceKey` and `deviceSecret`. For information about how to register a device, see [Registering Devices](../../../howto/device/manage/creating_device).
-- Ensure that the device has AES-128 and SHA-256 encryption capabilities.
+- Ensure that the device has SHA-256 encryption capabilities.
 
 ## Connecting to the CoAP Server
 
@@ -61,18 +61,16 @@ The IP address of the CoAP server is `coap-<hostname>`, where `hostname` is wher
 
     1. Concatenate the following fields in the following order:`deviceKey${DeviceKey}lifetime${Lifetime}productKey${ProductKey}secureMode${secureMode}`
    
-    1. Attach `${DeviceSecret}` to the end of the concatenated string:`deviceKey${DeviceKey}lifetime${Lifetime}productKey${ProductKey}secureMode${secureMode}${DeviceSecret}`
+    2. Attach `${DeviceSecret}` to the end of the concatenated string:`deviceKey${DeviceKey}lifetime${Lifetime}productKey${ProductKey}secureMode${secureMode}${DeviceSecret}`
    
-    2. Calculate the SHA-256 hash of the string generated in the previous step and capitalize all letters.
+    3. Calculate the SHA-256 hash of the string generated in the previous step and capitalize all letters.
 
-2. The device is authenticated. EnOS includes a CoAP return code and a token in the response for authenticating future sessions. The format of the response is as follows:
+2. The device is authenticated. EnOS includes a CoAP return code in the response. The format of the response is as follows:
  
    ```json
       Code: CoAP return code.
-      Payload: { "token" : ${Token} }
-    ```
-    
-   Token is a random string assigned by EnOS used for future authentication. The token is valid within the lifetime set in the request. If the device does not exchange any message with EnOS within the specified lifetime, the token goes invalid. The device must initiate a new authentication request to obtain a new token.
+   ```
+
 
 
 

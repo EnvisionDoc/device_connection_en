@@ -1,60 +1,55 @@
-Device connection
-===================
+Device Connection
+======================
 
 .. toctree::
    :maxdepth: 1
-   :caption: Overview
+   :caption: Device connection
 
-   device_management_overview
-   device_management_concepts
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Learn
-
-   howto/model/model_overview
-   learn/connection_scenarios
-   learn/message_flow
-   learn/enos_coap
-   howto/asset_tree/assettree_overview
-   learn/device_lifecycle_management
-   learn/ingestion/index
-   learn/issuing/index
-   learn/deviceconnection_authentication
+   deviceconnection_overview
+   direct_connection_overview
+   gettingstarted_direct_connection
+   edge_connection_overview
+   gettingstarted_edge_connection
+   deviceconnection_scenarios
 
 .. toctree::
    :maxdepth: 1
-   :caption: Get Started
+   :caption: Device modelling
 
-   quickstart/gettingstarted_device_connection
-   quickstart/gettingstarted_edge_connection
-   quickstart/gettingstarted_java_ssl_connection
+   device_modelling/model_overview
+   device_modelling/creating_model
+   device_modelling/deviceconnection_models
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
+   :caption: Communication protocols
+
+   protocol/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Asset Management
+
+   asset_management/index
+
+
+.. toctree::
+   :maxdepth: 1
    :caption: Tutorial
 
-   tutorial/connecting_device_simulated/index
-   tutorial/connecting_pc/index
-   tutorial/connecting_device_rasberrypi/index
-   tutorial/upgrading_firmware_ota/index
+   Connecting devices through cloud-based EnOS Edge </docs/enos-tutorials/en/1.0/device_connection/try/index.html>
 
 .. toctree::
    :maxdepth: 1
-   :caption: How-to's
+   :caption: Related services
 
-   howto/model/index
-   howto/device/manage/index
-   howto/device/develop/index
-   howto/ota/index
-   howto/alert/index
-   howto/asset_tree/index
+   Event management </docs/event-management/en/1.0/>
+   Real-time data processing </docs/online-data/en/1.0/>
+   Batch data processing </docs/offline-data/en/1.0/>
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Reference
-
-   reference/mqtt/index
-   reference/coap/index
-   reference/mqtt_offline/index
-   reference/i18n
+Downloads
+""""""""
+    pdf_ htmlzip_ epub_
+.. _pdf: https://www.envisioniot.com/projects/device-connection/downloads/pdf/1.0/
+.. _htmlzip: https://www.envisioniot.com/projects/device-connection/downloads/htmlzip/1.0/
+.. _epub: https://www.envisioniot.com/projects/device-connection/downloads/epub/1.0/

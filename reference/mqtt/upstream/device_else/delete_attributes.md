@@ -68,4 +68,10 @@ Upstream
      - Mandatory
      - Response code. &ldquo;200&rdquo; indicates that the requested operation is executed successfully.
 
+## Return Code
+
+| Return Code | Error Message | Explanation|
+|---------|---------|---------|
+| 1209 | Attribute delete data format error | Invalid request format |
+
 <!--end-->

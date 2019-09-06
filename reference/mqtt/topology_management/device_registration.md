@@ -108,11 +108,18 @@ Upstream
    * - Code
      - Integer
      - Mandatory
-     - Response code. &ldquo;200&rdquo; indicates that the request operation is executed successfully.
+     - Response code. `200` indicates that the request operation is executed successfully.
    * - Data
      - JSON
      - Optional
      - Detailed information of the device.
 
+## Return Code
+
+| Return Code | Error Message | Explanation|
+|---------|---------|---------|
+| 702 | DeviceKey existed | The device key you defined already exists. |
+| 714 | Generate deviceKey failed | EnOS failed to automatically generate a device key for you |
+| 739 | Exceed the product max device size | Device number exceeds maximum for a product |
 
 <!--end-->

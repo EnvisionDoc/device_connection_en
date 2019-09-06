@@ -41,7 +41,7 @@ After creating the device, you will obtain a set of credentials: Device Name (`d
 
 ## Follow-up Operations
 
-When offline, the status of the newly created device is shown as Inactive. To activate the device, you will need to initiate a connection through the device SDK. For more information, see [EnOS SDK Overview](https://www.envisioniot.com/docs/app-development/en/latest/sdk_overview.html)
+When offline, the status of the newly created device is shown as Inactive. To activate the device, you will need to initiate a connection through the device SDK. For more information, see [EnOS SDK Overview](/docs/app-development/en/latest/sdk_overview.html)
 
 ## Related Information
 

@@ -110,4 +110,10 @@ Upstream
      - Optional
      - Detailed returned information in JSON format.
 
+## Return Code
+
+| Return Code | Error Message | Explanation|
+|---------|---------|---------|
+| 1204 | Model validate failed | The event contains invalid format as defined by the model |
+
 <!--end-->

@@ -101,5 +101,16 @@ All parameters reported to EnOS Cloud will be signed except **sign** and **si
 
 .. note:: A edge can accommodate a maximum of 200 online sub-devices simultaneously. When the maximum number is reached, the edge rejects any connection requests.
 
+## Return Code
+
+| Return Code | Error Message | Explanation|
+|---------|---------|---------|
+| 705 | It failed to query device, not existed this device | The sub-device does not exist |
+| 723 | Device is disable | The sub-device is disabled |
+| 770 | Dynamic activate is not allowed | Dynamic activation is not allowed for this product |
+| 771 | Sub device cannot connect to mqtt broker directly | Sub-devices cannot be directly connected to EnOS Cloud |
+| 740 | Sub device not belong the gateway | The device is not a sub-device of this gateway |
+| 742 | Sign check failed | Hash signature verification failed |
+| 746 | The device must login by ssl | Certificate-based authentication is required for this product |
 
 <!--end-->

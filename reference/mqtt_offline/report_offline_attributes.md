@@ -94,6 +94,11 @@ Upstream
      - Optional
      - Returned detailed information. JSON format
 
+## Return Code
 
+| Return Code | Error Message | Explanation|
+|---------|---------|---------|
+| 1204 | Model validate failed | Invalid data format against model definition |
+| 1257 | Device not found | Device does not exist |
 
 <!--end-->

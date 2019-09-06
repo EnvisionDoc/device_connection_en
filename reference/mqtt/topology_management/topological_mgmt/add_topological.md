@@ -94,4 +94,18 @@ Upstream
 
 All parameters reported to EnOS Cloud will be signed except **sign** and **signmethod**. The parameter names and values are sorted in alphabetical order and concatenated without concatenation symbols. The concatenated string is then signed by using the algorithm specified by **signmethod**. Taking the request message above for example, `sign=uppercase(hmacsha1( clientId123deviceKeytestproductKey123timestamp1524448722000{deviceSecret}))`.
 
+## Return Code
+
+| Return Code | Error Message | Explanation|
+|---------|---------|---------|
+| 1255 | add topo failure, \[details\] | Part or all of the sub-devices failed to be added to the gateway device. To troubleshoot the problem, you must read the details of this return code. [#f1]_ |
+
+.. [#f1] Details of this return code can be categorized into the following:
+   - The device you add sub-devices to is not a gateway device.
+   - The sub-device does not exist.
+   - The number of sub-devices under this gateway reaches maximum.
+   - The sub-devices inlude a gateway device.
+   - One or multiple sub-devices has already been added to other gateway devices.
+
+
 <!--end-->

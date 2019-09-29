@@ -20,7 +20,7 @@ This tutorial walks you through a typical path of upgrading the firmware of a de
 
 ## Prerequisites
 
-You have completed connecting an RPi with an LED light to EnOS. For more information, see [Tutorial - Connecting Raspberry Pi into EnOS](/docs/device-connection/en/latest/tutorial/connecting_device_rasberrypi/index.html).
+You have completed connecting an RPi with an LED light to EnOS. For more information, see [Tutorial - Connecting Raspberry Pi into EnOS](/docs/device-connection/en/2.0.9/tutorial/connecting_device_rasberrypi/index.html).
 
 ## Units
 

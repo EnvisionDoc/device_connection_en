@@ -1,4 +1,4 @@
-# Integrating Offline Messages from Devices
+# Integrating Device Data From Offline Channel
 
 By creating an offline message integration channel, users can import the historical data from a 3rd-party system to EnOS for processing, storing and computing based on your policies.
 
@@ -9,7 +9,7 @@ To allow the data from a 3rd-party system to be integrated to EnOS, you must cre
 ## Before You Start
 
 - The product that the device belongs to has been created. For information about how to create a product, see [Creating Products](creating_product)。
-- You should have the permissions for device management; if not, contact your OU administrator to grant such permissions. See [Policies, Roles and Permissions](/docs/iam/en/latest/access_policy).
+- You should have the permissions for device management; if not, contact your OU administrator to grant such permissions. See [Policies, Roles and Permissions](/docs/iam/en/2.0.9/access_policy).
 
 ## Procedure
 

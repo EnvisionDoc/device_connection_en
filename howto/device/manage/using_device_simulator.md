@@ -15,7 +15,7 @@ Users can use the device simulator to perform the following functions:
 ## Before You Start
 
 - You have created the device to be simulated. For information about how to create a device, see [Creating Devices](creating_device).
-- You have access to device simulator. If not, contact your OU administrator to grant such permissions. See [Policies, Roles and Permissions](/docs/iam/en/latest/access_policy).
+- You have access to device simulator. If not, contact your OU administrator to grant such permissions. See [Policies, Roles and Permissions](/docs/iam/en/2.0.9/access_policy).
 
 ## Step 1: Add a Device Simulator
 

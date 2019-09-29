@@ -35,7 +35,7 @@ You can check the upgrading result of the firmware by clicking **Verify**. See t
 
 Check the new performance of the LED light to verify the firmware upgrade result.
 
-If the upgrading is failed, double check the firmware file or the device status, and upload a new firmware to verify firmware upgrading again. For more information about the verifying process, see [Verifying Firmware](/docs/device-connection/en/latest/howto/ota/verifying_firmware.html). 
+If the upgrading is failed, double check the firmware file or the device status, and upload a new firmware to verify firmware upgrading again. For more information about the verifying process, see [Verifying Firmware](/docs/device-connection/en/2.0.9/howto/ota/verifying_firmware.html). 
 
 ## Next Unit
 

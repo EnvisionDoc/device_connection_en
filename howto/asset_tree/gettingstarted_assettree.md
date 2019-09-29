@@ -1,10 +1,10 @@
-# Asset Tree Management Quick Start
+# Quick Start: Asset Tree Management
 
 This article describes how to create an asset tree and bind assets (such as devices) to the node of an asset tree through a sample scenario.
 
 ## Before You Start
 
-To create an asset tree, you must have write access to the **Asset Tree** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/latest/access_policy).
+To create an asset tree, you must have write access to the **Asset Tree** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/2.0.9/access_policy).
 
 ## Sample Scenario
 

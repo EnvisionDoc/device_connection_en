@@ -1,9 +1,9 @@
-# Managing Cached Commands
+# Issuing Cached Commands from Cloud
 
 EnOS can immediately send commands to devices or cache the commands until later at the request of an application.
 
-- Immediate sending: EnOS immediately sends the command once it receives it, and if the device is offline or the device does not receive the command, the command failed to be sent.
-- Command caching: EnOS first adds the command to a queue. After the device re-establishes connection with EnOS, EnOS sends the cached commands in order. You can use command caching where the device is disconnected from EnOS, or the low-power devices might fail to receive and execute the commands sent by EnOS in time as they are usually sleeping. EnOS can cache up to 50 commands for a single device.
+- Instant commands: EnOS immediately sends the command once it receives it, and if the device is offline or the device does not receive the command, the command failed to be sent.
+- Cached commands: EnOS first adds the command to a queue. After the device re-establishes connection with EnOS, EnOS sends the cached commands in order. You can use command caching where the device is disconnected from EnOS, or the low-power devices might fail to receive and execute the commands sent by EnOS in time as they are usually sleeping. EnOS can cache up to 50 commands for a single device.
 
 When an application sends a request to EnOS, it can carry the parameter `pendingTtl`. This parameter indicates for how long EnOS caches this command in the queue. Its value ranges from 0 second to 72800 seconds, i.e. 0-48 hours. The default value of `pendingTtl` is 0, that is, the command will be sent immediately, if `pendingTtl` is not specified in the request.
 
@@ -46,7 +46,7 @@ When a command is cached, you can check its status in the console.
 
 ## Before You Start
 
-- Obtain the permissions for device management; if not, ask your OU administrator to grant such permissions. See [Policies, Roles and Permissions](/docs/iam/en/latest/access_policy).
+- Obtain the permissions for device management; if not, ask your OU administrator to grant such permissions. See [Policies, Roles and Permissions](/docs/iam/en/2.0.9/access_policy).
 
 ## Steps
 

@@ -4,7 +4,7 @@ This article describes the asset tree management operations.
 
 ## Before You Start
 
-To perform the management operations, you must have write access to the **Asset Tree** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/latest/access_policy).
+To perform the management operations, you must have write access to the **Asset Tree** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/2.0.9/access_policy).
 
 ### Deleting an Asset
 

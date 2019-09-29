@@ -24,3 +24,4 @@ Managing Device Alerts
    create_alert_rule
    managing_alerts_in_batch
    set_alert_rule_for_device
+   setting_alert_triggering_delay_timer

@@ -16,29 +16,31 @@ In this unit, update the program that is used in [Unit 3](connecting_device) to 
 
 2. Program the `monitor()` function for uploading the PC system data to EnOS Cloud by specified interval (for example, every 10 seconds) and monitoring the CPU load (for example, `cpu_load>0.2`). See the following code snippet:
 
+
    ```
-       public static void monitor() throws Exception {
-           long lastReportTs=0;
-           while (true) {
-               Map<String, Object> systemInfo= collectDeviceInfo();
-               postMeasurepoint(systemInfo);
+   public static void monitor() throws Exception {
+       long lastReportTs=0;
+       while (true) {
+           Map<String, Object> systemInfo= collectDeviceInfo();
+           postMeasurepoint(systemInfo);
 
-               double cpu_load= (double) systemInfo.get("cpu_used");
-               if (cpu_load>0.2) {
-                   long ts = System.currentTimeMillis();
+           double cpu_load= (double) systemInfo.get("cpu_used");
+           if (cpu_load>0.2) {
+               long ts = System.currentTimeMillis();
 
-                   if ((ts-lastReportTs)>(60*1000)) {
-                       lastReportTs=ts;
-                       reportCPULoadEvent(cpu_load, "[Warning] CPU load: "+ cpu_load);
-                   }else{
-                       System.out.println("[Warning] No reporting required, CPULoadEvent: " + cpu_load);
-                   }
+               if ((ts-lastReportTs)>(60*1000)) {
+                   lastReportTs=ts;
+                   reportCPULoadEvent(cpu_load, "[Warning] CPU load: "+ cpu_load);
+               }else{
+                    System.out.println("[Warning] No reporting required, CPULoadEvent: " + cpu_load);
                }
-
-               Thread.sleep(interval*1000);
            }
+
+           Thread.sleep(interval*1000);
        }
+   }
    ```
+
 
 3. Program the `reportCPULoadEvent()` function for reporting CPU load events if the CPU load exceeds the threshold. See the following code snippet:
 

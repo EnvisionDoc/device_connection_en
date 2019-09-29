@@ -4,7 +4,7 @@ This article describes how to create a device collection, aka product. Any devic
 
 ## Before You Start
 
-- To create a product, you must have write access to the **Connectivity Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/latest/access_policy).
+- To create a product, you must have write access to the **Connectivity Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/2.0.9/access_policy).
 
 - The model corresponding to this product has been created. For information about how to create a model, see [Creating a Model](../../model/creating_model).
 

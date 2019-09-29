@@ -1,8 +1,11 @@
 # Tutorial: Setting Different Alert Thresholds for Devices of the Same Model
 
-The _threshold_ of an alert is a value configured in alert rule. When the value of a measurement point of a device satisfies the pre-configured relation with the threshold, an alert is issued according to pre-configured parameters.
+In certain scenario, the thresholds of alert for devices derived from one model may be different due to their specifications. For instance, a threshold that is set to maximum current has to fluctuate in value for different devices, as each device has a distinct maximum current. You can follow these steps to configure one alert for various devices with fluctuating thresholds:
 
-In this tutorial, you will learn how to configure alert rules for devices of the same model to satisfy different requirements in a smart building scenario.
+1. Set maximum current as an atrribute when you are creating a model.
+2. Set real-time current as a measurement point of the model.
+3. Set the maximum current to different values according to device specifications when you are registering the devices.
+4. Set the threshold to maximum current when you are creating an alert rule.
 
 ## Scenario
 
@@ -17,17 +20,17 @@ In this scenario, we will set different alert thresholds for the 2 ammeters so t
 
 ## Before You Start
 
-- You need to have necessary access to model, device management, and alert. If not, ask your OU administrator to grant you the access. For more information, see [Policy, Role, and Access](/docs/iam/en/latest/access_policy).
+- You need to have necessary access to model, device management, and alert. If not, ask your OU administrator to grant you the access. For more information, see [Policy, Role, and Access](/docs/iam/en/2.0.9/access_policy).
 
 ## Step 1: Configuring Development Environment
 
 We need EnOS Java SDK for MQTT to simulate two ammeters sending data to EnOS. To install EnOS Java SDK for MQTT, Java SE 8 and Maven 3 are required. Configure your environment by following these steps:
 
-1. Install Java SDK at https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html。
+1. Install Java SDK at https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html.
 
-2. Install Maven at http://maven.apache.org/download.cgi。
+2. Install Maven at http://maven.apache.org/download.cgi.
 
-3. Install your IDE, in this case, IntelliJ, at https://www.jetbrains.com/idea/download/。
+3. Install your IDE, in this case, IntelliJ, at https://www.jetbrains.com/idea/download/.
 
 4. Create dependency on EnOS Java SDK for MQTT in the _pom.xml_ of your project.
 
@@ -299,6 +302,9 @@ You can see the **Current above threshold** alerts are reported when the real-ti
 
 .. image:: ../../media/tutorial_alert_10.png
 
+## Next Step
+
+You can configure rule so that an alert is triggered if the rule is met and has continued for specified time. For more information, see []().
 
 
 

@@ -1,4 +1,4 @@
-# Forwarding Data From a Physical Device to Multiple Device Instances
+# Forwarding Data From a Physical Device to Multiple Device Instances in the Cloud
 
 You can use one device instance to receive data from a physical device and then forward the data to multiple other device instances. For explanation of these feature, the following concepts are defined:
 
@@ -37,7 +37,7 @@ This topic describes how to forward the data from a physical device to multiple 
 
 ## Before You Start
 
-- You have obtained access to device management. If not, ask your OU administrator to grant you the access. For more information, see [Policy, Role, and Access](/docs/iam/en/dev/access_policy).
+- You have obtained access to device management. If not, ask your OU administrator to grant you the access. For more information, see [Policy, Role, and Access](/docs/iam/en/2.0.9/access_policy).
 - You have created a source device that has started receiving data from a physical device. For more information, see [Creating a Device](creating_device).
 
 ## Procedure

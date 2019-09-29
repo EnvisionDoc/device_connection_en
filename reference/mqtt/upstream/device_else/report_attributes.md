@@ -83,12 +83,4 @@ Upstream
      - Mandatory
      - Response code. &ldquo;200&rdquo; indicates that the requested operation is executed successfully.
 
-## Return Code
-
-| Return Code | Error Message | Explanation|
-|---------|---------|---------|
-| 1204 | Model validate failed | The attribute contains invalid field as defined by the model |
-| 1207 | Attribute update data format error | Invalid request format |
-
-
 <!--end-->

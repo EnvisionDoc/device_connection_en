@@ -81,13 +81,6 @@ Upstream
    * - code
      - Integer
      - Mandatory
-     - Response code. `200` indicates that the request operation is executed successfully.
-
-## Return Code
-
-| Return Code | Error Message | Explanation|
-|---------|---------|---------|
-| 1208 | Attribute query data format error | Invalid request format |
-
+     - Response code. &ldquo;200&rdquo; indicates that the request operation is executed successfully.
 
 <!--end-->

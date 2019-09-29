@@ -12,4 +12,3 @@ use the edge connection.
 
    connect_subdevices
    disconnect_subdevices
-   batch_connect_subdevices

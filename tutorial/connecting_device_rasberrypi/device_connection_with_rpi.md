@@ -22,7 +22,7 @@ This tutorial walks you through a typical path of connecting a Raspberry Pi into
 
 ## Prerequisites
 
-You have signed up to EnOS for an individual account or an enterprise account to access the EnOS Console. For more information about EnOS accounts, see [Getting Started with EnOS](/docs/enos/en/latest/overview/getting_started_with_enos/index.html).
+You have signed up to EnOS for an individual account or an enterprise account to access the EnOS Console. For more information about EnOS accounts, see [Getting Started with EnOS](/docs/enos/en/2.0.8/overview/getting_started_with_enos/index.html).
 
 ## Units
 

@@ -46,7 +46,7 @@ The 3-rd party cloud can be seen as an application on EnOS, let’s suppose the 
 3. [Register the device](../../howto/device/manage/creating_device). You'll get the device identity
 `deviceKey` that you'll use when mapping the device between 3rd-party cloud and EnOS cloud.
 
-4. [Register the application](/docs/app-development/en/latest/managing_apps.html#registering-an-application) to obtain the service account: `accessKey` and `secretKey`, which the application will need to call EnOS APIs.
+4. [Register the application](/docs/app-development/en/2.0.8/managing_apps.html#registering-an-application) to obtain the service account: `accessKey` and `secretKey`, which the application will need to call EnOS APIs.
 
 ### Part II. Develop the Data Forwarding App
 
@@ -62,7 +62,7 @@ The 3-rd party cloud can be seen as an application on EnOS, let’s suppose the 
 
 5. The Data Forwarding App uses the `registerDevices API` to register the new device on EnOS.
 
-For how to use EnOS APIs, see [Getting Started with EnOS REST APIs](/docs/app-development/en/latest/gettingstarted_api.html).
+For how to use EnOS APIs, see [Getting Started with EnOS REST APIs](/docs/app-development/en/2.0.8/gettingstarted_api.html).
 
 .. list-table::
    :widths: auto

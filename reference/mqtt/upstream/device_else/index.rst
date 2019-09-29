@@ -8,8 +8,5 @@ Device Attributes, Measuring points, Events(Upstream)
    delete_attributes
    report_attributes
    report_points
-   report_offline_points
-   report_points_batch
-   report_offline_points_batch
    report_event_nopass
    report_event_pass

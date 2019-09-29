@@ -4,7 +4,7 @@ On the **Product** page, you can perform operations such as enabling dynamic reg
 
 ## Before You Start
 
-To manage products, you must have write access to the **Connectivity Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/latest/access_policy).
+To manage products, you must have write access to the **Connectivity Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/2.0.8/access_policy).
 
 ## Viewing Logs
 

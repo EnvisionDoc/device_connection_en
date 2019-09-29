@@ -150,14 +150,6 @@ Upstream
      - Optional
      - Detailed returned information in JSON format.
 
-## Return Code
-
-| Return Code | Error Message | Explanation |
-|---------|---------|---------|
-| 1204 | Model validate failed | The measurement point contains invalid format as defined by the model |
-| 1206 | Measurepoint post data format error | Invalid JSON format |
-| 1212 | No sub-device permission | Sub-device is offline or is not connected to EnOS through pre-configured gateway device |
-
 <!--end-->
 
 

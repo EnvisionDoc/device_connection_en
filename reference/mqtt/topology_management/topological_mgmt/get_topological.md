@@ -74,16 +74,11 @@ Upstream
    * - code
      - Integer
      - Mandatory
-     - Response code. `200` indicates that the requested operation is executed successfully.
+     - Response code. &ldquo;200&rdquo; indicates that the requested operation is executed successfully.
    * - data
      - JSON
      - Optional
      - Detailed returned information in JSON format.
 
-## Return Code
-
-| Return Code | Error Message | Explanation|
-|---------|---------|---------|
-| 1200 | Parse error, \[details\] | The device requesting is not a gateway device. |
 
 <!--end-->

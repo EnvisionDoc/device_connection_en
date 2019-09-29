@@ -437,11 +437,6 @@ Parameter descriptions:
      - Required
      - Result return code. 200 indicates success.
 
-| Return Code | Error Message | Explanation|
-|---------|---------|---------|
-| 764 | Device task not found | OTA task of this device is not found |
-| 765 | Device task not start | The device has not started OTA upgrade yet |
-
 
 ### Requesting Upgrade
 

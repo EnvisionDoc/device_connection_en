@@ -19,7 +19,7 @@ public class SecureConnectSample {
     private final static Logger LOG = LoggerFactory.getLogger(SecureConnectSample.class);
 
     /**
-     * Refer to /docs/device-connection/zh_CN/latest/learn/deviceconnection_authentication.html
+     * Refer to /docs/device-connection/zh_CN/2.0.8/learn/deviceconnection_authentication.html
      * on how to create an SSL jks file.
      */
     private final static String SSL_JKS_PATH = "<SslPath>";

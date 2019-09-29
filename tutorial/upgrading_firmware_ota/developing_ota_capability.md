@@ -1,6 +1,6 @@
 # Unit 1: Developing OTA Capabilities on the Raspberry Pi
 
-In [Unit 4](/docs/device-connection/en/latest/tutorial/connecting_device_rasberrypi/connecting_devices.html) of the *Connecting Raspberry Pi into EnOS* tutorial, we have developed a program using the EnOS Device SDK for MQTT for Python to connect the RPi to EnOS.
+In [Unit 4](/docs/device-connection/en/2.0.8/tutorial/connecting_device_rasberrypi/connecting_devices.html) of the *Connecting Raspberry Pi into EnOS* tutorial, we have developed a program using the EnOS Device SDK for MQTT for Python to connect the RPi to EnOS.
 
 In this unit, upgrade the program to develop the OTA capabilities on the RPi, including the following functions:
 
@@ -9,17 +9,17 @@ In this unit, upgrade the program to develop the OTA capabilities on the RPi, in
 - Sending upgrade requests
 - Reporting upgrade progress and the reasons for upgrade failure
 
-For detailed information about firmware OTA upgrade modes and process, see [Firmware OTA Upgrade Overview](/docs/device-connection/en/latest/howto/ota/ota_overview.html).
+For detailed information about firmware OTA upgrade modes and process, see [Firmware OTA Upgrade Overview](/docs/device-connection/en/2.0.8/howto/ota/ota_overview.html).
 
 ## Prerequisites
 
-The python program developed in [Unit 4](/docs/device-connection/en/latest/tutorial/connecting_device_rasberrypi/connecting_devices.html) of the *Connecting Raspberry Pi into EnOS* tutorial is running normally, and the LED light on the RPi can be controlled through the cloud.
+The python program developed in [Unit 4](/docs/device-connection/en/2.0.8/tutorial/connecting_device_rasberrypi/connecting_devices.html) of the *Connecting Raspberry Pi into EnOS* tutorial is running normally, and the LED light on the RPi can be controlled through the cloud.
 
 ## Programming for OTA Capabilities
 
 Take the following steps to develop a program using the EnOS Device SDK for MQTT for Python, for empowering the RPi device with OTA capabilities:
 
-1. Export the python program developed in [Unit 4](/docs/device-connection/en/latest/tutorial/connecting_device_rasberrypi/connecting_devices.html) of the *Connecting Raspberry Pi into EnOS* tutorial from the USB flash disk to your workstation.
+1. Export the python program developed in [Unit 4](/docs/device-connection/en/2.0.8/tutorial/connecting_device_rasberrypi/connecting_devices.html) of the *Connecting Raspberry Pi into EnOS* tutorial from the USB flash disk to your workstation.
 
 2. Update the program with the following code snippet for the OTA service.
 

@@ -37,7 +37,7 @@ See the following example:
 
 .. image:: media/stream_config.png
 
-For more information about the *Multi-Point Merging* template, see [Multi-Point Merging Template](/docs/data-asset/en/latest/learn/multi_point_overview.html).
+For more information about the *Multi-Point Merging* template, see [Multi-Point Merging Template](/docs/data-asset/en/2.0.8/learn/multi_point_overview.html).
 
 ## Step 3. Running the data processing job
 

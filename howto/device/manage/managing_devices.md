@@ -4,7 +4,7 @@ This topic describes the device management operations such as how to view and ch
 
 ## Before You Start
 
-- To manage devices, you must have write access to the **Connectivity Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/latest/access_policy).
+- To manage devices, you must have write access to the **Connectivity Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/2.0.8/access_policy).
 
 - To learn about the activation and running status of a device, see [Secret-based One-way Authentication](../../../learn/deviceconnection_authentication).
 
@@ -63,7 +63,7 @@ You can update devices in batch by downloading the template, editing and then up
 
 ## Adding Sub-devices to a Gateway Device
 
-Perform the following steps to add sub-devices to gateway devices other than EnOS Edge. To add sub-devices to EnOS Edge, see [Managing Edge](/docs/enos-edge/en/latest/howto/console_configuration/managing_edge).
+Perform the following steps to add sub-devices to gateway devices other than EnOS Edge. To add sub-devices to EnOS Edge, see [Managing Edge](/docs/enos-edge/en/2.0.8/howto/console_configuration/managing_edge).
 
 1. Go to **Device Management > Device** .
 

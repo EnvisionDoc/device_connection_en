@@ -75,20 +75,6 @@ Upstream
    * - code
      - Integer
      - Mandatory
-     - Response code. `200` indicates that the requested operation is executed successfully.
-
-## Return Code
-
-| Return Code | Error Message | Explanation|
-|---------|---------|---------|
-| 1256 | Remove topo failure, \[details\] | Part or all of the sub-devices failed to be removed as sub-device. To troubleshoot the problem, you must read the details of this return code. [#f1]_ |
-
-.. [#f1] Details of this return code can be categorized into the following:
-   - The device you remove sub-devices from is not a gateway device.
-   - The sub-device does not exist.
-   - The sub-device is online.
-   - The device to be removed is not a sub-device of the gateway device.
-
-
+     - Response code. &ldquo;200&rdquo; indicates that the requested operation is executed successfully.
 
 <!--end-->

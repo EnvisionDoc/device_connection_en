@@ -12,10 +12,10 @@ Data is sent to the EnOS Cloud via the IoT Hub and distributed by the rule engin
 
 - Redis, time-series database (TSDB), and archive database
   - Redis database: always stores the latest device data (which is also called, hot data) for fast access
-  - TSDB: stores data of specified measure points that are relative frequently accessed (which is also called, warm data). The storage duration is as defined by the user-specified storage policies, such as data of the last 1 month, 6 months, or 1 year. By default, EnOS only stores the hot data through redis, you MUST configure storage policy for your data of a certain time span to be stored in TSDB. You can then access the data in TSDB through corresponding APIs. For more information, see [Storage Policy](/docs/data-asset/en/latest/learn/storage_policy_overview).
+  - TSDB: stores data of specified measure points that are relative frequently accessed (which is also called, warm data). The storage duration is as defined by the user-specified storage policies, such as data of the last 1 month, 6 months, or 1 year. By default, EnOS only stores the hot data through redis, you MUST configure storage policy for your data of a certain time span to be stored in TSDB. You can then access the data in TSDB through corresponding APIs. For more information, see [Storage Policy](/docs/data-asset/en/2.0.8/learn/storage_policy_overview).
   - Archive database: stores data that are relatively less frequently accessed or relatively have longer history, also through the definition of storage policy.
 - Alert engine: for real-time monitoring of device alerts that are generated according to the triggering rules defined in Alert service.
-- Stream processing engine: to be processed according to the define stream processing logic, such as to clease the real-time data, to calculate results based on business needs such as to calculate the average data for a batch of devices, and returns the data back to data hub to be used by other services or APIs. EnOS provides easy-to-use GUI-based stream analytics IDE to improve analytics efficiency. For more information, see [Stream Analytics](/docs/data-asset/en/latest/learn/index).
+- Stream processing engine: to be processed according to the define stream processing logic, such as to clease the real-time data, to calculate results based on business needs such as to calculate the average data for a batch of devices, and returns the data back to data hub to be used by other services or APIs. EnOS provides easy-to-use GUI-based stream analytics IDE to improve analytics efficiency. For more information, see [Stream Analytics](/docs/data-asset/en/2.0.8/learn/index).
 
 
 The following functional modules and concepts are involved in the message flow:
@@ -36,7 +36,7 @@ The cloud broker provides the following functions:
 
 Edge is the front end of Envision EnOS IoT platform for data acquisition. It is used to collect on-site device data or connected to a third party system for data acquisition and transmission of data to the EnOS Cloud.
 
-Edge, as software, supports data acquisition, multiple communication conventions, local caching and breakpoint continuation. It can either be deployed in a cloud machine or an on-site hardware of a specified brand model. An edge must have a legal serial number (SN) assigned by Envision to be recognized by EnOS Cloud. For more information, see [EnOS Edge Overview](/docs/enos-edge/en/latest/edge_overview.html)
+Edge, as software, supports data acquisition, multiple communication conventions, local caching and breakpoint continuation. It can either be deployed in a cloud machine or an on-site hardware of a specified brand model. An edge must have a legal serial number (SN) assigned by Envision to be recognized by EnOS Cloud. For more information, see [EnOS Edge Overview](/docs/enos-edge/en/2.0.8/edge_overview.html)
 
 ## Connection Scenarios
 

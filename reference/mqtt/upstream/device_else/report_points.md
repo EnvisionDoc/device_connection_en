@@ -1,4 +1,4 @@
-# Report Device Measurement Points
+# Report Device Measure Points
 
 A device can publish a message to this topic to report the newly added measure point to the cloud.
 
@@ -105,11 +105,5 @@ Upstream
      - JSON
      - Optional
      - Detailed returned information in JSON format.
-
-## Return Code
-
-| Return Code | Error Message | Explanation|
-|---------|---------|---------|
-| 1204 | Model validate failed | The measurement point contains invalid format as defined by the model |
 
 <!--end-->

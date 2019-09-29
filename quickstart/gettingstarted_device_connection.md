@@ -189,8 +189,8 @@ After you complete the device registration, obtain the device triple: `ProductKe
 
 After registering the device and before connecting the device to EnOS Cloud, we need to configure storage policy for the data of measuring point INV.GenActivePW. Detailed steps are as follows:
 
-1. If TSDB resource is not requested yet for the organization, log in the EnOS Console, select **Resource Management**, and request TSDB resource under the **Data Asset Management** tab. For more information about requesting resources, see [Resource Management Overview](/docs/enos/en/2.0.9/resourcemanagement/overview.html). 
-2. In the EnOS Console, select **Time Series Data > Storage Policy** and configure storage policy (with appropriate storage type and storage time) for the measuring point data. For more information about configuring storage policy, see [Configuring TSDB Storage](/docs/data-asset/en/2.0.9/configuring_tsdb_storage.html).
+1. If TSDB resource is not requested yet for the organization, log in the EnOS Console, select **Resource Management**, and request TSDB resource under the **Data Asset Management** tab. For more information about requesting resources, see [Resource Management Overview](/docs/enos/en/latest/resourcemanagement/overview.html). 
+2. In the EnOS Console, select **Time Series Data > Storage Policy** and configure storage policy (with appropriate storage type and storage time) for the measuring point data. For more information about configuring storage policy, see [Configuring TSDB Storage](/docs/data-asset/en/latest/configuring_tsdb_storage.html).
 
 ## Step 5: Use Java SDK to Simulate Device Sending Telemetry
 
@@ -304,7 +304,7 @@ In the EnOS Console, click **Device Management > Device**, locate the device and
 
 1. From the device list, locate the device and click the **View** icon to show the **Device Details** page.
 2. Click the **Measuring Points** tab, find the **INV.GenActivePW** measuring point, and click **View data** to open the **Data Insights** page.
-3. View the latest data of the measuring point on the Data Insights page. If TSDB storage policy has been configured for the measuring point, you can also view the historic data of the measuring point in a chart or table. For more information about data insights, see [Generating Time Series Data Chart](/docs/data-asset/en/2.0.9/howto/storage/generating_data_chart.html).   
+3. View the latest data of the measuring point on the Data Insights page. If TSDB storage policy has been configured for the measuring point, you can also view the historic data of the measuring point in a chart or table. For more information about data insights, see [Generating Time Series Data Chart](/docs/data-asset/en/latest/howto/storage/generating_data_chart.html).   
 
 ## Step 8: Use Online Debugging Tool to Set Measuring Point Value
 

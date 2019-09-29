@@ -4,7 +4,7 @@ In this unit, update the python program to include a new command for the LED lig
 
 ## Programming for the New Command
 
-In [Unit 2](/docs/device-connection/en/2.0.9/tutorial/connecting_device_rasberrypi/registering_devices.html) of the *Connecting Raspberry Pi into EnOS* tutorial, we defined the *Light* measuring point for sending status control to the LED light, with the following performance:
+In [Unit 2](/docs/device-connection/en/latest/tutorial/connecting_device_rasberrypi/registering_devices.html) of the *Connecting Raspberry Pi into EnOS* tutorial, we defined the *Light* measuring point for sending status control to the LED light, with the following performance:
 
 - Sending 0 stands for light off
 - Sending 1 stands for light on

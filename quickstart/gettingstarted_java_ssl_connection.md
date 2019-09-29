@@ -53,7 +53,7 @@ openssl req -new -newkey rsa:2048 -out edge.csr -keyout edge.key -subj /C=CN/ST=
 - The CSR file is used for requesting certificate from EnOS Cloud
 - The private key is used for decrypting the data that is encrypted by the certificate.
 
-For the guidelines of creating CSR file, see [Creating your Certificate Signing Request (CSR) file](/docs/enos/en/2.0.9/security/x509_ca/creating_csr.html)。
+For the guidelines of creating CSR file, see [Creating your Certificate Signing Request (CSR) file](/docs/enos/en/latest/security/x509_ca/creating_csr.html)。
 
 ### Step 2: Invoke REST API to Request for Certificate
 

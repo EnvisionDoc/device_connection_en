@@ -8,7 +8,7 @@ After creating a model, you may have to change its elements or add new elements 
 
 ## Before You Start
 
-You need to have proper authority to view and manage models. Contact your OU administrator for access. For more information, see [Policy, Role, and Access](/docs/iam/en/2.0.9/access_policy).
+You need to have proper authority to view and manage models. Contact your OU administrator for access. For more information, see [Policy, Role, and Access](/docs/iam/en/latest/access_policy).
 
 ## Procedure
 

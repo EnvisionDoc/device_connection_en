@@ -4,7 +4,7 @@ Before connecting the PC to EnOS IoT hub, you need to register it on the EnOS Co
 
 ## Step 1: Defining a Computer Model
 
-A model is the abstraction of the features of an object that is connected to the IoT hub. The model defines the features of a device, including attributes, measuring points, services, and events. For more information about models, see [Thing Model](/docs/device-connection/en/2.0.9/howto/model/model_overview.html).
+A model is the abstraction of the features of an object that is connected to the IoT hub. The model defines the features of a device, including attributes, measuring points, services, and events. For more information about models, see [Thing Model](/docs/device-connection/en/latest/howto/model/model_overview.html).
 
 This step assumes that there is no model for computers to be reused on EnOS. Take the following steps to create a model named **Computer** and define the needed features.
 
@@ -69,7 +69,7 @@ This step assumes that there is no model for computers to be reused on EnOS. Tak
 
    .. image:: media/model_features.png
 
-For details about device model settings, see [Creating a Model](/docs/device-connection/en/2.0.9/howto/model/creating_model.html).
+For details about device model settings, see [Creating a Model](/docs/device-connection/en/latest/howto/model/creating_model.html).
 
 ## Step 2: Creating a Computer Product
 
@@ -92,7 +92,7 @@ In this step, create a product called **Computer**. Assume that a device of this
 
    .. image:: media/create_product.png
 
-For details about the configuration of a product, see [Creating a Device Collection (Product)](/docs/device-connection/en/2.0.9/howto/device/manage/creating_product.html).
+For details about the configuration of a product, see [Creating a Device Collection (Product)](/docs/device-connection/en/latest/howto/device/manage/creating_product.html).
 
 ## Step 3: Registering the PC as a Device
 
@@ -121,7 +121,7 @@ In this step, create a device named **PC_Win10**, which belongs to the **Compute
 
    .. image:: media/register_device.png   
 
-For details about device settings, see [Registering a Device](/docs/device-connection/en/2.0.9/howto/device/manage/creating_device.html).
+For details about device settings, see [Registering a Device](/docs/device-connection/en/latest/howto/device/manage/creating_device.html).
 
 After you complete the registration of the PC, find the registered device from the device list, and click the **View** icon in the **Operations** column to open the **Device Details** page. You can get the device triple properties: *Product Key*, *Device Key*, and *Device Secret*, which will be used in connecting the PC into EnOS IoT hub. See the following example:
 

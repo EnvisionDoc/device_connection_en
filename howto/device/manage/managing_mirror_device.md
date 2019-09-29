@@ -8,7 +8,7 @@ This topic describes how to disable a mirror device.
 
 ## Before You Start
 
-- You have obtained access to device management. If not, ask your OU administrator to grant you the access. For more information, see [Policy, Role, and Access](/docs/iam/en/dev/access_policy).
+- You have obtained access to device management. If not, ask your OU administrator to grant you the access. For more information, see [Policy, Role, and Access](/docs/iam/en/2.0.9/access_policy).
 - You have completed assigning a device instance as mirror device. For more information, see [Forwarding Data From a Physical Device to Multiple Device Instances](mirroring_device_data).
 
 ## Procedure

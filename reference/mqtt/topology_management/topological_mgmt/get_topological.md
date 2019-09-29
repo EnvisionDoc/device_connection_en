@@ -84,6 +84,6 @@ Upstream
 
 | Return Code | Error Message | Explanation|
 |---------|---------|---------|
-| 1200 | Parse error, \[details\] | The device requesting is not a gateway device. |
+| 1200 | Parse error, \[details\] | Error occured during parsing. You need to read the \[details\] for troubleshooting. The most common cause is that the device making the request is not a gateway device. |
 
 <!--end-->

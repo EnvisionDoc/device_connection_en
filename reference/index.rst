@@ -1,4 +1,4 @@
-EnOS Device Protocol Standard
+Device Protocol for MQTT
 ==============================
 
 EnOS provides device SDKs for you to configure devices. These device SDKs already encapsulate protocols for data exchange between devices and EnOS Cloud. 
@@ -9,6 +9,5 @@ When the device SDKs provided by EnOS cannot meet your requirements, you can ref
    :maxdepth: 1
 
    mqtt/index
-   coap/index
    mqtt_offline/index
-   i18n
+   

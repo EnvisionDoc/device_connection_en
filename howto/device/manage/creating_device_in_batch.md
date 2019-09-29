@@ -1,4 +1,4 @@
-# Creating Devices in Batch
+# Registering Devices in Batch
 
 You can create devices of the same product in batch by using this feature.
 
@@ -11,7 +11,7 @@ When there are lots of devices that need to be created, you can use the followin
 ##  Before You Start
 
 - Created The product that the device belongs to. For information about how to create a product, see [Creating a Device Collection (Product)](creating_product)。
-- Obtained the permissions for device management; if not, contact your OU administrator to obtain such permissions. See [Policies, Roles and Permissions](/docs/iam/en/latest/access_policy).
+- Obtained the permissions for device management; if not, contact your OU administrator to obtain such permissions. See [Policies, Roles and Permissions](/docs/iam/en/2.0.9/access_policy).
 
 ## Procedure
 
@@ -66,7 +66,9 @@ View the results:
 
 ## Next Steps
 
-Any devices not connected to EnOS will be tagged as "not activated". If you wish to activate these devices, you need establish connection by using the client SDK. For more information, see [EnOS SDK Quick Start](/docs/app-development/en/latest/gettingstarted_sdk.html)
+To store the telemetry data in EnOS TSDB, you need to configure the TSDB policy before activating the device. Else the data sent from the device won't be stored in TSDB by default. For more information, see [Configuraing TSDB Storage](/docs/data-asset/en/2.0.9/configuring_tsdb_storage).
+
+Any devices not connected to EnOS will be tagged as "not activated". If you wish to activate these devices, you need establish connection by using the client SDK. For more information, see [EnOS SDK Quick Start](/docs/app-development/en/2.0.9/gettingstarted_sdk.html).
 
 ## Related information
 

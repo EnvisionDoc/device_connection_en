@@ -1,4 +1,4 @@
-Managing Models
+Device Modeling
 ======================
 
 .. toctree::

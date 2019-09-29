@@ -1,4 +1,4 @@
-# Thing Model
+# Device Modeling
 
 The thing model is the abstraction and digitization of the physical objects in the physical world. A thing model is the summary of the features of the objects that are connected to the EnOS Cloud, including attributes, measure points, services and events of the device.
 
@@ -36,7 +36,6 @@ The attributes, measurement points, services, and events are described by data, 
 - float
 - double
 - enum
-- boolean
 - string, 1 to 1024 bytes in length
 - timestamp, in UTC with millisecond timing accuracy
 - date

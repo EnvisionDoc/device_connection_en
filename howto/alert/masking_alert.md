@@ -6,7 +6,7 @@ The following figure illustrates the alert masking mechanism by an example:
 - Node 3 and Node 6 in the asset tree are device instances of the same model SampleModel.
 - The SampleModel applies to Tree A as per the definition of the alert rule and turns on the alert masking.
 
-![](media/alert_masking.png)
+.. image:: media/alert_masking.png
 
 In this example, the alert masking takes effect on Node 3 and Node 6. That is:
 - When Node 3 and Node 7 generate alerts at the same time, only the alerts of Node 3 are received while the alerts of Node 7 are blocked.
@@ -15,7 +15,7 @@ In this example, the alert masking takes effect on Node 3 and Node 6. That is:
 
 Assume that there are multiple instances of SampleModel on the same path. In the following figure, if Node 2 is also an instance of SampleModel, the alert rule will be applied to both Node 2 and Node 6, but the application will only receive the alerts in the top of the path, i.e. the alerts of Node 2.
 
-![](media/alert_masking_2.png)
+.. image:: media/alert_masking_2.png
 
 
 ## Scenarios

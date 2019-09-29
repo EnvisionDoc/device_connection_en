@@ -1,7 +1,7 @@
-Device Protocol for MQTT (Offline)
+Offline Message Integration
 =========================
 
-Device Protocol for MQTT defines the historical data format of the MQTT-based transmission between 3rd-party systems and EnOS cloud.
+Device Protocol for MQTT offline message defines the historical data format of the MQTT-based transmission between 3rd-party systems and EnOS cloud.
 
 The supported MQTT version:
 

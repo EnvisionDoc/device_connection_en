@@ -28,7 +28,7 @@ This procedure takes the **Alert Severity** as an example to describe how to per
 
    After choosing the Excel file and clicking **Import**, EnOS will validate the data in the file and prompt the number of successful and failed items. Click **Export Invalid Records** to download the error message and check the failure cause. Fix the issue and import again.
 
-    ![](media/alert_batch_confirmation.png)
+ .. image:: media/alert_batch_confirmation.png
 
 4. Click **Confirm** to complete the batch operation.
 

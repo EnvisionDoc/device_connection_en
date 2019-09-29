@@ -98,7 +98,7 @@ Configure all the features in EnOS according to the defined thing model.
      - PI: PI type measuring point is usually used for calculating electric power data. When reading data, you can choose to aggregate data with specific algorithms.
      - Generic: Measuring point for all other types of data, especially data of non-numerical type.
 
-     .. note:: If measuring point data has been stored in TSDB, the point type cannot be modified. Change of the point type may result in failure of querying stored historical data. For more information, see [Configuring TSDB Storage](/docs/data-asset/en/latest/configuring_tsdb_storage.html). 
+     .. note:: If measuring point data has been stored in TSDB, the point type cannot be modified. Change of the point type may result in failure of querying stored historical data. For more information, see [Configuring TSDB Storage](/docs/data-asset/en/2.0.9/configuring_tsdb_storage.html). 
 
    - **Quality Indicator**: Whether the measuring point is an indicator of the data quality. If set to **Yes**, the configurations are as follows:
 
@@ -126,7 +126,7 @@ Configure all the features in EnOS according to the defined thing model.
 
 3. To create more measuring points, repeat the above steps.
 
-   .. note:: When measuring points are created, you must configure storage policy for the measuring point data in time. Otherwise, the measuring point data will not be stored in TSDB by default after the device is connected to EnOS Cloud. For more information about configuring storage policy, see [Configuring TSDB Storage](/docs/data-asset/en/latest/configuring_tsdb_storage.html). 
+   .. note:: When measuring points are created, you must configure storage policy for the measuring point data in time. Otherwise, the measuring point data will not be stored in TSDB by default after the device is connected to EnOS Cloud. For more information about configuring storage policy, see [Configuring TSDB Storage](/docs/data-asset/en/2.0.9/configuring_tsdb_storage.html). 
 
 ### Adding Service
 

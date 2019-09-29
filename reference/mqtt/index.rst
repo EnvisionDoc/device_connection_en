@@ -1,7 +1,7 @@
-Device Protocol for MQTT
+Real-time Data Integration
 =========================
 
-Device Protocol for MQTT defines the data format of the MQTT-based transmission between devices and EnOS cloud.
+Device Protocol for MQTT real-time data defines the data format of the MQTT-based transmission between devices and EnOS cloud.
 
 The supported MQTT version:
 

@@ -15,31 +15,53 @@ You can connect devices to the EnOS Cloud using the MQTT protocol directly. Incl
 ```java
   mqttClientId: {clientId}|securemode={secureMode}, signmethod=sha256,timestamp={timeStamp}|
   mqttUsername: {deviceKey}&{productKey}
-  mqttPassword: toUpperCase(sha256(content{deviceSecret}/{productSecret}))
+  mqttPassword: toUpperCase(sha256({content}{deviceSecret}/{productSecret}))
 ```
 - For the **mqttClientId** segment:
 
-  - `clientId`: Required. Identifier of the device. Can be specified using either the MAC address or device serial number. It must contain no more than 64 characters. 
-
-  The parameters within ``||`` are the optional parameters. 
+  - `clientId`: Required. Identifier of the device. Can be either the MAC address or device serial number. It must contain no more than 64 characters. 
 
   - `securemode`: Required. Indicates the secure mode that has been used. 
-    - For secret-per-device authentication (`productKey`, `deviceKey`, `deviceSecret` is provided to statically activate the device), the value is `2`.
-    - For secret-per-product authentication (`productKey`, `productSecret`, `deviceKey` is provided to dynamically activate the device) the value is `3`.
+    - For static authentication (`productKey`, `deviceKey`, `deviceSecret` is provided to statically activate the device), the value is `2`.
+    - For dynamic authentication (`productKey`, `productSecret`, `deviceKey` is provided to dynamically activate the device) the value is `3`.
   - `signmethod`: Required. Indicates the signing method. Supports sha256, which means using SHA256 signature algorithm.
-  - `timestamp`: Required. Indicates the UNIX timestamp of the current time in milliseconds.
+  - `timestamp`: Required. Indicates the UNIX timestamp of the current time in millisecond.
 
-- For the **mqttUsername** segment:
+   For example, the values of parameters required for `mqttClientId` are as follows:
+   - `clientId`=id123456
+   - `securemode`=2 for static authentication
+   - `sighmethod`=sha256
+   - `timestamp`=1234567890 
 
-  - The value of the `deviceKey` and `productKey` of a device that can be found on the EnOS Console after you complete creating the device.
+   Then the `mqttCliendId` in this case would be `clientIdid123456|securemode=2,signmethod=sha256,timestamp=1234567890|`
 
-- For the **mqttPassword** segment:
+- For the **mqttUsername** segment: Concatenated by `deviceKey`, "&", and `productKey`.
+
+  - `deviceKey`: Device key of a product. Can be found on the EnOS Console after you register the device.
+  - `productKey`: Product key of a product. Can be found on the EnOS Console after you register the device.
+
+  For example, the `deviceKey` is `abcdefg` and `productKey` is `1234567`. Then `mqttUsername` in this case would be `abcdefg&1234567`.
+
+- For the **mqttPassword** segment: For static authentication,  a string concatenated by `content` and `deviceSecret`. For dynamic authentication, a string concatenated by `content` and `productSecret`. Then use SHA256 algorithm to generate a new string from this string and turn the new string into upper case letters.
 
   <!-- - You can use the [Password Generation Tool](../../`static/nonsdk`enosmqttsign`index.html) to generate the password quickly.-->
 
- Different methods are used to generate `mqttPassword` for devices that use secret-per-device and secret-per-product authentication.
+   - `content`: concatenated by `clientId` and its value, `deviceKey` and its value, `productKey` and its value, `timestamp` and its value.
 
-### Secret-per-device Authentication
+     For example, the values of parameters required for `content` are as follows:
+     - `clientId` = id123456
+     - `deviceKey` = dK987654
+     - `productKey` = pK11111
+     - `timestamp` = 1234567890
+
+     Then `content` = `clientIdid123456deviceKeydK987654productKeypK11111timestamp1234567890`
+
+   - `deviceSecret`: Device secret of a device. You can find it in EnOS console.
+   - `productSecret`: Product secret of a device. You can find it in EnOS console.
+
+   Either `deviceSecret` or `productSecret` should be appended to `content` without space.
+
+### Static Authentication
 
 In secret-per-device authentication, `productKey`, `deviceKey`, and `deviceSecret` are configured in the device before the device tries to get authenticated and log in to EnOS. You can obtain a device's `productKey`, `deviceKey`, and `deviceSecret` from EnOS console after you have created the device in **Device Management > Device**.
 
@@ -47,11 +69,6 @@ For secret-per-device authentication:
 ```java
 mqttPassword: toUpperCase(sha256({content}{deviceSecret}))
 ```
-
-Generate an MQTT password by combining `content` and `deviceSecret`, whose definitions are explained as follows:
-
-  - `content`: The concatenation of `clientID`, `deviceKey`, `productKey`, `timestamp`, and their values. The parameter names must be sorted in alphabetical order and concatenated without any space or character.
-  - `deviceSecret`: Append the value of `deviceSecret` after `content` without any space or character. 
 
 .. note:: The value of `timestamp` must be same as the `timestamp` in the **mqttClientId** segment.
 
@@ -80,7 +97,7 @@ The `mqttPassword` in this case should be:
 mqttPassword = toUpperCase(sha256(clientId123456deviceKeytestproductKey654321timestamp1548753362502abcdefg))
 ```
 
-### Secret-per-product Authentication
+### Dynamic Authentication
 
 To enable secret-per-product authentication, you must first toggle **Enable Dynamic Activation** switch on in **Device Management > Product > Product Details**.
 
@@ -89,11 +106,6 @@ For secret-per-product authentication,:
 ```java
 mqttPassword: toUpperCase(sha256({content}{productSecret}))
 ```
-Generate an MQTT password by combining `content` and `productSecret`, whose definitions are explained as follows:
-
-  - `content`: The concatenation of `clientID`, `deviceKey`, `productKey`, `timestamp`, and their values. The parameter names must be sorted in alphabetical order and concatenated without any space or character.
-
-  - `productSecret`: Append the value of `productSecret` after `content` without any space or character. 
 
 .. note:: The value of `timestamp` must be same as the `timestamp` in the **mqttClientId** segment.
 

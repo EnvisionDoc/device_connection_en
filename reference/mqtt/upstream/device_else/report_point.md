@@ -1,8 +1,8 @@
-# Report Device Measurement Points
+# Report Device Measurement Point
 
-A device can publish a message to this topic to report the newly added measure point to the cloud.
+A device can publish a message to this topic to report a newly added measure point to the cloud.
 
-.. note:: Configure the parameters according to the output and input parameters of the measure points.
+.. note:: Configure the parameters according to the output and input parameters of the measure point.
 
 Upstream
 
@@ -64,7 +64,7 @@ Upstream
    * - params
      - Object
      - Mandatory
-     - Parameters used for reporting device measure points.
+     - Parameters used for reporting device measure point.
    * - method
      - String
      - Mandatory
@@ -110,6 +110,6 @@ Upstream
 
 | Return Code | Error Message | Explanation|
 |---------|---------|---------|
-| 1204 | Model validate failed | The measurement point contains invalid format as defined by the model |
+| 1204 | Model validation failed | The measurement point contains invalid format as defined by the model |
 
 <!--end-->

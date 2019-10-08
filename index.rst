@@ -25,6 +25,7 @@ Device connection
    howto/device/index
    howto/asset_tree/index
    howto/alert/index
+   Data Subscription Overview <https://www.envisioniot.com/docs/data-asset/en/2.0.9/howto/obtain/index.html>
 
 .. toctree::
    :maxdepth: 2

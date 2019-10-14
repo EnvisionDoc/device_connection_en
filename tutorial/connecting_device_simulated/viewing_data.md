@@ -16,4 +16,4 @@ The device data uploaded to EnOS Cloud can be viewed on the EnOS Console:
 2. Click the **Measuring Points** tab, locate the **temperature** measuring point, and click **View Data**.
 3. View the latest data of the **temperature** measuring point on the **Data Insights** page.
 
-With storage settings configured, the uploaded device data can be stored for further processing and analysis. For more information, see [Managing Time Series Data](/docs/data-asset/en/latest/howto/storage/index.html).
+With storage settings configured, the uploaded device data can be stored for further processing and analysis. For more information, see [Managing Time Series Data](/docs/data-asset/en/2.0.9/howto/storage/index.html).

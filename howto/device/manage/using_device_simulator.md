@@ -7,15 +7,12 @@ Users can use the device simulator function for the following purposes:
 
 ## About This Task
 
-Users can use the device simulator to perform the following functions:
-
-- Add, edit, query, or delete a device simulator
-- Start or stop a device simulator.
+Users can use the device simulator to create and manage device simulators.
 
 ## Before You Start
 
-- You have created the device to be simulated. For information about how to create a device, see [Creating Devices](creating_device).
-- You have access to device simulator. If not, contact your OU administrator to grant such permissions. See [Policies, Roles and Permissions](/docs/iam/en/latest/access_policy).
+- You have registered the device to be simulated. For information about how to create a device, see [Registering Devices](creating_device).
+- You have access to device management. If not, contact your OU administrator to grant you such permissions. See [Policies, Roles and Permissions](/docs/iam/en/2.0.9/access_policy).
 
 ## Step 1: Add a Device Simulator
 
@@ -31,7 +28,13 @@ Users can use the device simulator to perform the following functions:
 
 ## Step 2: Define the simulation data sample
 
-1. Find out the simulator just created in the list of simulators, click **Edit** in the operation column.
+You can add simulators one by one or add them in batch.
+
+### Add Simulators One By One
+
+1. Find out the simulator just created in the list of simulators, click |edit| in the operation column.
+
+  .. |edit| image:: ../../../media/button_edit.png
 
 2. Click **Download** in the pop-up window.
 
@@ -45,13 +48,49 @@ Users can use the device simulator to perform the following functions:
 
 5. Click **Confirm**.
 
+### Add Simulators in Batch
+
+1. Click **Batch Define Sample** .
+
+2. Select the product whose devices needs sample definition.
+
+3. Click **Download** to download data sample template.
+
+4. Edit *sample.xlsx* and save your change.
+
+  You can add some abnormal values to the sample to trigger an alert.
+
+5. Click **Upload** , select the sample to be uploaded and click **Next** .
+
+6. Select the devices that needs simulating and click **OK** .
+
+  Existing sample for selected device will be overwritten.
+
 ## Step 3: Start the Device Simulator
+
+You can start simulators one by one or in batch.
+
+### Start Simulators One By One
 
 1. Find out the target simulator and select **Start**;
    
 2. Set the time when simulation ends in the pop-up window.
    
    The starting time of simulation is the system time when you click **Start** and the ending time of simulation should be within 90 days after the current system time.
+
+### Start Simulators in Batch
+
+1. Select the simulators to be started from the list.
+
+  You can select only those whose data samples have been defined.
+
+2. Click **More > Batch Start** .
+
+3. Set an end time for all selected simulators.
+
+  The end time of simulation should be within 90 days after the current system time.
+
+  If selected simulators include any that has already been started, its end time will be overwritten.
 
 ## Results
 

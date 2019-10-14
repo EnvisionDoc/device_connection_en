@@ -4,7 +4,7 @@ A device is an instance of a model. It belongs to a certain product. A DeviceKey
 
 ## Before You Start
 
-- To register a device, you must have write access to the **Connectivity Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/latest/access_policy).
+- To register a device, you must have write access to the **Connectivity Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/2.0.9/access_policy).
 
 - The product to which the device belongs has been created. For information about how to create a product, see [Creating a Product](creating_product).
 
@@ -41,11 +41,10 @@ After creating the device, you will obtain a set of credentials: Device Name (`d
 
 ## Follow-up Operations
 
-To store the telemetry data in EnOS TSDB, you need to configure the TSDB policy before activating the device. Else the data sent from the device won't be stored in TSDB by default. For more information, see [Configuraing TSDB Storage](/docs/data-asset/en/latest/configuring_tsdb_storage).
+To store the telemetry data in EnOS TSDB, you need to configure the TSDB policy before activating the device. Else the data sent from the device won't be stored in TSDB by default. For more information, see [Configuraing TSDB Storage](/docs/data-asset/en/2.0.9/configuring_tsdb_storage).
 
 
-When offline, the status of the newly created device is shown as Inactive. To activate the device, you will need to initiate a connection through the device SDK. For more information, see [EnOS SDK Overview](/docs/app-development/en/latest/sdk_overview.html)
-
+When offline, the status of the newly created device is shown as Inactive. To activate the device, you will need to initiate a connection through the device SDK. For more information, see [EnOS SDK Overview](/docs/app-development/en/2.0.9/sdk_overview.html)
 
 
 ## Related Information

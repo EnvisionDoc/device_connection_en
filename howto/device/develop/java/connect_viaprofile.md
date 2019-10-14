@@ -62,7 +62,7 @@ public class ConfigFileBasedConnectExample {
     private final static Logger LOG = LoggerFactory.getLogger(ConfigFileBasedConnectExample.class);
 
     /**
-     * Refer to /docs/device-connection/en/latest/learn/deviceconnection_authentication.html
+     * Refer to /docs/device-connection/zh_CN/2.0.9/learn/deviceconnection_authentication.html
      * on how to create an SSL jks file.
      */
     private final static String SSL_JKS_PATH = "<path>";

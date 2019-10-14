@@ -4,7 +4,7 @@ When creating a product, if you select **Custom** for the **Data Type** field, t
 
 ## Before You Start
 
-To create and manage data parsing script, you must have write access to the **Connectivity Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/latest/access_policy).
+To create and manage data parsing script, you must have write access to the **Connectivity Management** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/2.0.9/access_policy).
 
 ## About this task
 

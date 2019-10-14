@@ -46,7 +46,7 @@ When a command is cached, you can check its status in the console.
 
 ## Before You Start
 
-- Obtain the permissions for device management; if not, ask your OU administrator to grant such permissions. See [Policies, Roles and Permissions](/docs/iam/en/latest/access_policy).
+- Obtain the permissions for device management; if not, ask your OU administrator to grant such permissions. See [Policies, Roles and Permissions](/docs/iam/en/2.0.9/access_policy).
 
 ## Steps
 

@@ -20,7 +20,7 @@ In this scenario, we will set different alert thresholds for the 2 ammeters so t
 
 ## Before You Start
 
-- You need to have necessary access to model, device management, and alert. If not, ask your OU administrator to grant you the access. For more information, see [Policy, Role, and Access](/docs/iam/en/latest/access_policy).
+- You need to have necessary access to model, device management, and alert. If not, ask your OU administrator to grant you the access. For more information, see [Policy, Role, and Access](/docs/iam/en/2.0.9/access_policy).
 
 ## Step 1: Configuring Development Environment
 

@@ -4,7 +4,7 @@ This article describes how to create an asset tree and bind an asset to the asse
 
 ## Before You Start
 
-To create an asset tree, you must have write access to the **Asset Tree** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/latest/access_policy).
+To create an asset tree, you must have write access to the **Asset Tree** service. If you don't have the access, contact your OU administrator to obtain the access. For more information about user access in EnOS, see [Policy, Roles, and Access](/docs/iam/en/2.0.9/access_policy).
 
 ## Creating an Asset Tree
 
@@ -14,21 +14,18 @@ To create an asset tree, you must have write access to the **Asset Tree** servic
 
 2. Click  **+**  on the upper left corner to create an asset tree.
 
-3. In the **Create Asset Tree** window, provide the following settings:
+3. In the **Create Asset Tree** window, Fill in the fields displayed in the web GUI as necessary. In the web GUI:
 
-   - **Name**: Enter the asset tree name.
    - **Select Model**: Select a model for the tree from the drop-down list.
-     If the asset tree does not need a model, you can use the built-in model `None`, which has four empty elements.
-   - **Timezone/City**: Select the timezone or city for the asset tree.
-   - If you selected a model, provide corresponding attribute values ​​according to the specifications defined in the thing model.
+     If you want to create a logical asset, select the built-in model `None`, which has four empty elements.
 
    .. image:: ../../media/creating_asset_tree.png
 
 4. Click **Confirm** to complete creation.
 
-## Binding a Device to Asset Tree
+## Binding a Device to Asset Tree Node
 
-After creating the asset tree, you can bind an asset to the tree as a node by the following methods:
+After creating the asset tree, you can bind an asset to the tree node by the following methods:
 
 - Create an asset based on the model
 - Add an existing asset to the asset tree
@@ -61,7 +58,7 @@ After creating the asset tree, you can bind an asset to the tree as a node by th
 
 ## Results
 
-You created an asset tree and bound an asset to the tree as a node.
+You created an asset tree and bound an asset to a node on the tree.
 
 ## Related Information
 

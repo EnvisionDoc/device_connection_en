@@ -217,4 +217,4 @@ In the EnOS Console, click **Device Management > Device**, locate the Edge01 and
 
 1. In the **Device** page, locate the INV001 device and click **View** to show the **Device Details** page.
 2. Click the **Measuring Points** tab, select the **INV.GenActivePW** measuring point, and click **View data** to open the **Data Insights** page.
-3. View the latest data of the measuring point on the Data Insights page. If TSDB storage policy has been configured for the measuring point, you can also view the historic data of the measuring point in a chart or table. For more information about data insights, see [Generating Time Series Data Chart](/docs/data-asset/en/latest/howto/storage/generating_data_chart.html).   
+3. View the latest data of the measuring point on the Data Insights page. If TSDB storage policy has been configured for the measuring point, you can also view the historic data of the measuring point in a chart or table. For more information about data insights, see [Generating Time Series Data Chart](/docs/data-asset/en/2.0.9/howto/storage/generating_data_chart.html).   
